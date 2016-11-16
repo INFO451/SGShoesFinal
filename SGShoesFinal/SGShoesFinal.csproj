@@ -79,6 +79,14 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Code\Category.cs" />
+    <Content Include="App_Code\Customer.cs" />
+    <Content Include="App_Code\Order.cs" />
+    <Content Include="App_Code\Product.cs" />
+    <Content Include="App_Code\Product_Detail.cs" />
+    <Content Include="App_Code\DBObject.cs" />
+    <Content Include="App_Code\BusinessLogic.cs" />
+    <Content Include="App_Code\DBUtils.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -86,6 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
