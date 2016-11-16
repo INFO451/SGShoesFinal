@@ -66,6 +66,11 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\adidas sneakers.jpg" />
+    <Content Include="Images\alyssatoffee.jpg" />
+    <Content Include="Images\flats.jpg" />
+    <Content Include="Images\juliecombat.jpg" />
+    <Content Include="Images\stecy heels.jpg" />
     <Content Include="packages.config" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <None Include="Web.Debug.config">
@@ -113,7 +118,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Images\" />
     <Folder Include="Models\" />
     <Folder Include="PagesAdmin\" />
   </ItemGroup>
