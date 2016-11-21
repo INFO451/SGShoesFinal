@@ -8,11 +8,12 @@ namespace SGShoesFinal.App_Code
     public class DBObject
     {
         private int _id = 0;
-    }
 
-    public int Id
-    {
-        get { return _id; }
-        set { _id = value; }
+
+        public int Id
+        {
+            get { return _id; }
+            set { _id = value; }
+        }
     }
 }

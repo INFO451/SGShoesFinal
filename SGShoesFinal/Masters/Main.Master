@@ -1,0 +1,35 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="SGShoesFinal.Main" %>
+
+<!DOCTYPE html>
+<head runat="server">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link href="~/Style.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class="container">
+        <div class ="Main">
+        <h1 class="logo"><img src="../Media/Logo1.png" alt="S&G Shoes" /></h1>
+        <div class="navbar">
+            <a class="menul" href="INDEX.aspx">HOME</a>
+            <span class="navbar_spacer">//</span>
+            <a class="menul" href="Page2.aspx"> PRODUCTS</a>
+            <span class="navbar_spacer">//</span>
+            <a class="menul" href="Page1.aspx">LOGIN</a>
+            <span class="navbar_spacer">//</span>
+            <a class="menul" href="Page3.aspx">MY ACCOUNT</a>                
+        </div>
+            </div>
+     
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+
+    </div>
+    </form>
+</body>
+</html>

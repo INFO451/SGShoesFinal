@@ -68,11 +68,20 @@
   <ItemGroup>
     <Content Include="Images\adidas sneakers.jpg" />
     <Content Include="Images\alyssatoffee.jpg" />
+    <Content Include="Images\arches.png" />
+    <Content Include="Images\arches_%402X.png" />
     <Content Include="Images\flats.jpg" />
+    <Content Include="Images\grilled.png" />
+    <Content Include="Images\grilled_%402X.png" />
     <Content Include="Images\juliecombat.jpg" />
+    <Content Include="Images\light_honeycomb.png" />
+    <Content Include="Images\light_honeycomb_%402X.png" />
     <Content Include="Images\stecy heels.jpg" />
+    <Content Include="Index.aspx" />
     <Content Include="packages.config" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <Content Include="Masters\LoggedIn.Master" />
+    <Content Include="Masters\Main.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -100,6 +109,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Style.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -113,6 +123,27 @@
     <Content Include="App_Code\DBUtils.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\LoggedIn.Master.cs">
+      <DependentUpon>LoggedIn.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masters\LoggedIn.Master.designer.cs">
+      <DependentUpon>LoggedIn.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\Main.Master.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masters\Main.Master.designer.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
