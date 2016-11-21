@@ -17,15 +17,17 @@
         <div class="navbar">
             <a class="menul" href="INDEX.aspx">HOME</a>
             <span class="navbar_spacer">//</span>
-            <a class="menul" href="Page2.aspx"> PRODUCTS</a>
+            <a class="menul" href="ProductsPage.aspx"> PRODUCTS</a>
             <span class="navbar_spacer">//</span>
-            <a class="menul" href="Page1.aspx">LOGIN</a>
+            <a class="menul" href="LoginPage.aspx">LOGIN</a>
             <span class="navbar_spacer">//</span>
             <a class="menul" href="Page3.aspx">MY ACCOUNT</a>                
         </div>
             </div>
      
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:fall16_g2ConnectionString %>" SelectCommand="SELECT * FROM [Category]"></asp:SqlDataSource>
         
         </asp:ContentPlaceHolder>
 
