@@ -1,6 +1,6 @@
 ﻿body {
     background-image: url(Images/arches.png);
-    font-family: Georgia, serif;
+    font-family: Georgia, serif !important;
 }
 
 /* Customize container */
@@ -23,6 +23,7 @@
 {
     margin-top: 0px;
     margin-bottom: 10px;
+    text-align:center !important;
 }
 
 .navbar

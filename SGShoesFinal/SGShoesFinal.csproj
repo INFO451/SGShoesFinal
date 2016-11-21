@@ -77,6 +77,7 @@
     <Content Include="Images\light_honeycomb.png" />
     <Content Include="Images\light_honeycomb_%402X.png" />
     <Content Include="Images\logo.jpg" />
+    <Content Include="Images\logo.png" />
     <Content Include="Images\stecy heels.jpg" />
     <Content Include="Index.aspx" />
     <Content Include="packages.config" />

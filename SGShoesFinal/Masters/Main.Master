@@ -13,7 +13,7 @@
     <form id="form1" runat="server">
     <div class="container">
         <div class ="Main">
-        <h1 class="logo"><img src="../Media/Logo1.png" alt="S&G Shoes" /></h1>
+        <h1 class="logo"><img src="../Images/logo.png" alt="S&G Shoes" /></h1>
         <div class="navbar">
             <a class="menul" href="INDEX.aspx">HOME</a>
             <span class="navbar_spacer">//</span>
