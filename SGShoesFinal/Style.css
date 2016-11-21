@@ -53,6 +53,6 @@
     color:black;   
 }
 
-menul:hover {
+a.menul:hover {
     font-weight: bold;
 }
