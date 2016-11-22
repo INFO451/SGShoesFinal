@@ -15,7 +15,7 @@ namespace SGShoesFinal.App_Code
         private string _descripLong = String.Empty;
 
         private double _unitWeight = 0;
-        private string _unitPrice = String.Empty;
+        private decimal _unitPrice = 0;
         private string _keywords = String.Empty;
         private string _imageLocS = String.Empty;
         private string _imageLocL = String.Empty;
@@ -65,7 +65,7 @@ namespace SGShoesFinal.App_Code
             get { return _unitWeight; }
             set { _unitWeight = value; }
         }
-        public string UnitPrice
+        public decimal unitPrice
         {
             get { return _unitPrice; }
             set { _unitPrice = value; }
@@ -137,8 +137,8 @@ namespace SGShoesFinal.App_Code
         /// <param name="dob">DBObject Date of Birth</param>
         /// <param name="active">Active Account</param>
         /// <param name="rate">Hourly Rate</param>
-        public Product(string pName, string manufacture, string shortDes, string longDes, double unitWeight, string unitPrice, string Keywords, string smallLoc, string LargeLoc)
-            : this(0, pName, manufacture, shortDes, longDes, unitWeight, unitPrice, Keywords, smallLoc, LargeLoc) { }
+        public Product(int cid ,string pName, string manufacture, string shortDes, string longDes, double unitWeight, decimal unitPrice, string Keywords, string smallLoc, string LargeLoc)
+            : this(0, cid, pName, manufacture, shortDes, longDes, unitWeight, unitPrice, Keywords, smallLoc, LargeLoc) { }
 
         /// <summary>
         /// Initializes DBObject
@@ -158,9 +158,10 @@ namespace SGShoesFinal.App_Code
         /// <param name="dob">DBObject Date of Birth</param>
         /// <param name="active">Active Account</param>
         /// <param name="rate">Hourly Rate</param>
-        public Product(int id, string pName, string manufacture, string shortDes, string longDes, double unitWeight, string unitPrice, string Keywords, string smallLoc, string LargeLoc)
+        public Product(int id, int cid, string pName, string manufacture, string shortDes, string longDes, double unitWeight, decimal unitPrice, string Keywords, string smallLoc, string LargeLoc)
         {
-            _catId = id;
+            _id = id;
+            _catId = cid;
             _productN = pName;
             _manufacturer = manufacture;
             _descripShort = shortDes;

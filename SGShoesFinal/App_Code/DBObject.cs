@@ -5,10 +5,9 @@ using System.Web;
 
 namespace SGShoesFinal.App_Code
 {
-    public class DBObject
+    abstract class DBObject
     {
         private int _id = 0;
-        private string _type = string.Empty;
 
 
         public int Id
@@ -17,11 +16,10 @@ namespace SGShoesFinal.App_Code
             set { _id = value; }
         }
 
-        public string Type
-        {
-            get { return _type; }
-            set { _type = value; }
-        }
+        abstract public void select();
+        abstract public void update();
+        abstract public void delete();
+        abstract public void insert();
 
     }
 }

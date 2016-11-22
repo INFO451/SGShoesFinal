@@ -12,7 +12,7 @@ namespace SGShoesFinal.App_Code
     {
         private static readonly string _connectionString = string.Empty;
 
-       public List<Product> ProductselectAll()
+       public List<Product> ProductSelectAll()
         {
             List<Product> colProduct = new List<Product>();
 
@@ -32,17 +32,17 @@ namespace SGShoesFinal.App_Code
                     int dID = (int)reader["Product_Id"];
                     int dCID = (int)reader["Category_Id"];
                     string dprod = (string)reader["Product_Name"];
-                    string dmanu = (string)reader["MIDDLE_INITIAL"];
-                    string dshortdes = (string)reader["FIRST_NAME"];
-                    string dlongdes = (string)reader["GENDER"];
+                    string dmanu = (string)reader["Manufacturer"];
+                    string dshortdes = (string)reader["Description_Short"];
+                    string dlongdes = (string)reader["Description_Long"];
 
-                    string dweight = (string)reader["STREET_ADDRESS"];
-                    string dprice = (string)reader["STATE"];
-                    string keywords = (string)reader["CITY"];
-                    string dimagesmall = (string)reader["ZIP"];
-                    string dimagelage = (string)reader["HOME_PHONE"];
+                    double dweight = (double)reader["Unit_Weight"];
+                    decimal dprice = (decimal)reader["Unit_Price"];
+                    string keywords = (string)reader["Keywords"];
+                    string dimagesmall = (string)reader["Image_Location_Small"];
+                    string dimagelage = (string)reader["Image_Location_Large"];
 
-                    colProduct.Add(new Product(dID, dCID, dmanu, dshortdes, dlongdes, dweight, dprice, keywords, dimagesmall, dimagelage, dcell, demail, ddob, dactive, drate));
+                    colProduct.Add(new Product(dID, dCID, dprod, dmanu, dshortdes, dlongdes, dweight, dprice, keywords, dimagesmall, dimagelage));
                     colProduct.Add(new Product(
                         (int)reader["Product_Id"],
                         (int)reader["Category_Id"],
@@ -51,11 +51,11 @@ namespace SGShoesFinal.App_Code
                         (string)reader["Description_Short"],
                         (string)reader["Description_Long"],
 
-                        (string)reader["Unit_Weight"],
-                        (string)reader["Unit_Price"],
+                        (double)reader["Unit_Weight"],
+                        (decimal)reader["Unit_Price"],
                         (string)reader["Keywords"],
                         (string)reader["Image_Location_Small"],
-                        (string)reader["Image_Location_Large"]
+                        (string)reader["Image_Location_Large"]));
                 }
             }
             return colProduct;
@@ -73,7 +73,7 @@ namespace SGShoesFinal.App_Code
             // Create command
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
-            cmd.CommandText = "INSERT Product (FIRST_NAME,MIDDLE_INITIAL, Product_Name,GENDER,STREET_ADDRESS, CITY, STATE, ZIP, EMAIL, DOB, HOME_PHONE, CELL_PHONE, ACTIVE, HOURLY_RATE) VALUES (@FName,@Middle,@LName,@Gender,@SAdress,@City,@State,@Zip,@Email,@Dob,@HPhone,@Cell,@Active,@Rate)";
+            cmd.CommandText = "INSERT Product (Description_Short,Manufacturer, Product_Name,Description_Long,Unit_Weight, Keywords, Unit_Price, Image_Location_Small, EMAIL, DOB, Image_Location_Large) VALUES (@FName,@Middle,@LName,@Gender,@SAdress,@City,@State,@Zip,@Email,@Dob,@HPhone,@Cell,@Active,@Rate)";
 
             // Add parameters
             cmd.Parameters.AddWithValue("@FName", newProduct.FName);
@@ -114,7 +114,7 @@ namespace SGShoesFinal.App_Code
 /*
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
-            cmd.CommandText = "UPDATE Product SET FIRST_NAME=@FName,Product_Name=@LName,MIDDLE_INITIAL=@Middle,GENDER=@Gender,STREET_ADDRESS=@SAdress,CITY=@City,STATE=@State,ZIP=@Zip,EMAIL=@Email,DOB=@DOB,HOME_PHONE=@Hphone,CELL_PHONE=@Cell,ACTIVE=@Active,HOURLY_RATE=@Rate WHERE Product_Id=@Id";
+            cmd.CommandText = "UPDATE Product SET Description_Short=@FName,Product_Name=@LName,Manufacturer=@Middle,Description_Long=@Gender,Unit_Weight=@SAdress,Keywords=@City,Unit_Price=@State,Image_Location_Small=@Zip,EMAIL=@Email,DOB=@DOB,Image_Location_Large=@Hphone WHERE Product_Id=@Id";
 
             cmd.Parameters.AddWithValue("@LName", employeeToUpdate.LName);
             cmd.Parameters.AddWithValue("@FName", employeeToUpdate.FName);

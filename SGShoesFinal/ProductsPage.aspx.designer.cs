@@ -13,15 +13,6 @@ namespace SGShoesFinal.Masters {
     public partial class WebForm2 {
         
         /// <summary>
-        /// CatDD control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList CatDD;
-        
-        /// <summary>
         /// ProductData control.
         /// </summary>
         /// <remarks>
@@ -29,15 +20,6 @@ namespace SGShoesFinal.Masters {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ObjectDataSource ProductData;
-        
-        /// <summary>
-        /// CatData control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource CatData;
         
         /// <summary>
         /// DataList1 control.

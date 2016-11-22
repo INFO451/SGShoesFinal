@@ -57,3 +57,19 @@ a.menul:hover {
     font-weight: bold;
     background: #F9EDED
 }
+
+h2.refine {
+    font-family:Georgia !important;
+    font-size:1.02em;
+    line-height:1em;
+    text-transform:capitalize;
+    border-bottom: 1px solid #999;
+    display: inline-block;
+    padding: 6px 0 15px;
+    width:100%;
+}
+
+.section{
+    border-bottom: 1px solid #999;
+    font-family:Georgia !important;
+}
