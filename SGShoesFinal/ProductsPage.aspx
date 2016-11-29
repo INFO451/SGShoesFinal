@@ -16,31 +16,27 @@
         </div>
     </aside>
     <div class="col-md-9">
-    <asp:ObjectDataSource ID="ProductData" runat="server" DataObjectTypeName="SGShoesFinal.App_Code.Product" DeleteMethod="deleteProduct" InsertMethod="insertProduct" SelectMethod="getAllProducts" TypeName="SGShoesFinal.App_Code.BusinessLogic" UpdateMethod="updateProduct"></asp:ObjectDataSource>
+    <asp:ObjectDataSource ID="ProductData" runat="server" DataObjectTypeName="SGShoesFinal.App_Code.Product" DeleteMethod="deleteProduct" InsertMethod="insertProduct" SelectMethod="getAllProducts" TypeName="SGShoesFinal.App_Code.Product" UpdateMethod="updateProduct"></asp:ObjectDataSource>
 <asp:DataList ID="DataList1" runat="server" DataSourceID="ProductData" RepeatColumns="3">
     <ItemTemplate>
-&nbsp;<asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("ImageLocSmall") %>' />
+        <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("ImageLocSmall") %>' />
         <br />
-        <asp:Label ID="ProdNameLabel" runat="server" Text='<%# Eval("ProdName") %>' Font-Size="Large" />
+        ProdName:
+        <asp:Label ID="ProdNameLabel" runat="server" Text='<%# Eval("ProdName") %>' />
         <br />
+        Manfac:
         <asp:Label ID="ManfacLabel" runat="server" Text='<%# Eval("Manfac") %>' />
-<br />
+        <br />
         ShortDescrip:
         <asp:Label ID="ShortDescripLabel" runat="server" Text='<%# Eval("ShortDescrip") %>' />
         <br />
-        Price:$
+        unitPrice:
         <asp:Label ID="unitPriceLabel" runat="server" Text='<%# Eval("unitPrice") %>' />
-        <br />
-        Keywords:
-        <asp:Label ID="KeywordsLabel" runat="server" Text='<%# Eval("Keywords") %>' />
-        <br />
-        <asp:DropDownList ID="Size" runat="server" AutoPostBack="True">
+        <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True">
         </asp:DropDownList>
-        <asp:DropDownList ID="Quantity" runat="server" AutoPostBack="True">
+        <asp:DropDownList ID="DropDownList2" runat="server" AutoPostBack="True">
         </asp:DropDownList>
-        <asp:HyperLink ID="AddToCart" runat="server">Add To Cart</asp:HyperLink>
-        <br />
-        <br />
+<br />
     </ItemTemplate>
 </asp:DataList>
 </div>
