@@ -116,5 +116,43 @@ namespace SGShoesFinal.App_Code
             _name = CatName;
             _description = CatDescription;
         }
+        public static List<Category> getAllCategories()
+        {
+            DBUtils dataAccessLayer = new DBUtils();
+            return dataAccessLayer.CategorySelectAll();
+        }
+
+
+        public static void insertCategory(Category newCategory)
+        {
+            DBUtils dataAccessLayer = new DBUtils();
+            dataAccessLayer.CategoryInsert(newCategory);
+        }
+
+        /// <summary>
+        /// Deletes an existing product
+        /// </summary>
+        /// <param name="id">Product Id</param>
+        public static void deleteCategory(Category objectToDelete)
+        {
+            int id = objectToDelete.CatId;
+            if (id < 1)
+                throw new ArgumentException("Product Id must be greater than 0", "id");
+
+            DBUtils dataAccessLayer = new DBUtils();
+            dataAccessLayer.CategoryDelete(id);
+        }
+
+
+        public static void updateCategory(Category productDetToUpdate)
+        {
+            if (CategoryToUpdate.CatId < 1)
+                throw new ArgumentException("Product Id must be greater than 0", "id");
+
+            DBUtils dataAccessLayer = new DBUtils();
+            dataAccessLayer.CategoryUpdate(CategoryToUpdate);
+        }
+
     }
 }
+
