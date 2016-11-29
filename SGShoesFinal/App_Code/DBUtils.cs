@@ -176,7 +176,7 @@ namespace SGShoesFinal.App_Code
 
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
-            cmd.CommandText = "SELECT Product_Id,Category_Id, Product_Detail_Name, Manufacturer, Description_Short, Description_Long ,Unit_Weight, Unit_Price, Keywords, Image_Location_Small, Image_Location_Large FROM Product";
+            cmd.CommandText = "SELECT Product_Detail_Id,Size, Quantity, Product_Id FROM Product_Detail";
 
             // Execute command
             using (con)
@@ -202,8 +202,8 @@ namespace SGShoesFinal.App_Code
                     colProductDet.Add(new Product_Detail(
                         (int)reader["Product_Detail_Id"],
                         (int)reader["Product_Id"],
-                        (int)reader["Size"],
-                        (int)reader["Quantity"]
+                        (double)reader["Size"],
+                        (int)reader["Quantity"]                        
                         ));
                 }
             }

@@ -17,10 +17,10 @@
     </aside>
     <div class="col-md-9">
     <asp:ObjectDataSource ID="ProductData" runat="server" DataObjectTypeName="SGShoesFinal.App_Code.Product" DeleteMethod="deleteProduct" InsertMethod="insertProduct" SelectMethod="getAllProducts" TypeName="SGShoesFinal.App_Code.Product" UpdateMethod="updateProduct"></asp:ObjectDataSource>
-        <asp:ObjectDataSource ID="DetailDataSource" runat="server"></asp:ObjectDataSource>
 <asp:DataList ID="DataList1" runat="server" DataSourceID="ProductData" RepeatColumns="3">
     <ItemTemplate>
         <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("ImageLocSmall") %>' />
+        <asp:HiddenField ID="ProdIDh" runat="server" Value='<%# Eval("Id", "{0}") %>' />
         <br />
         ProdName:
         <asp:Label ID="ProdNameLabel" runat="server" Text='<%# Eval("ProdName") %>' />
@@ -33,11 +33,21 @@
         <br />
         unitPrice:
         <asp:Label ID="unitPriceLabel" runat="server" Text='<%# Eval("unitPrice") %>' />
-        <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True">
+        <asp:DropDownList ID="SizeDD" runat="server" AutoPostBack="True" DataSourceID="SqlDetailDataSize" DataTextField="Size" DataValueField="Size">
         </asp:DropDownList>
-        <asp:DropDownList ID="DropDownList2" runat="server" AutoPostBack="True">
+        <asp:DropDownList ID="QuantDD" runat="server" AutoPostBack="True" DataSourceID="SqlDetailDataQuant" DataTextField="Quantity" DataValueField="Quantity">
         </asp:DropDownList>
 <br />
+        <asp:SqlDataSource ID="SqlDetailDataSize" runat="server" ConnectionString="<%$ ConnectionStrings:fall16_g2ConnectionString %>" SelectCommand="SELECT [Size] FROM [Product_Detail] WHERE ([Product_Id] = @Product_Id)">
+            <SelectParameters>
+                <asp:ControlParameter ControlID="ProdIDh" Name="Product_Id" PropertyName="Value" Type="Int32" />
+            </SelectParameters>
+        </asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDetailDataQuant" runat="server" ConnectionString="<%$ ConnectionStrings:fall16_g2ConnectionString %>" SelectCommand="SELECT [Quantity] FROM [Product_Detail] WHERE ([Size] = @Size)">
+            <SelectParameters>
+                <asp:ControlParameter ControlID="SizeDD" Name="Size" PropertyName="SelectedValue" Type="Double" />
+            </SelectParameters>
+        </asp:SqlDataSource>
     </ItemTemplate>
 </asp:DataList>
 </div>
