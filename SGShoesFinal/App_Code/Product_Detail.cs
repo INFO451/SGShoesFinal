@@ -9,7 +9,7 @@ namespace SGShoesFinal.App_Code
     {
         private int _id = 0;
         private int _prodId = 0;
-        private int _size = 0;
+        private double _size = 0;
         private int _quantity = 0;
 
 
@@ -19,7 +19,7 @@ namespace SGShoesFinal.App_Code
             set { _id = value; }
         }
 
-        public int CatId
+        public int ProdId
         {
             get { return _prodId; }
             set { _prodId = value; }
@@ -27,7 +27,7 @@ namespace SGShoesFinal.App_Code
         /// <summary>
         /// First Name
         /// </summary>
-        public int ProdName
+        public double Size
         {
             get { return _size; }
             set { _size = value; }
@@ -35,7 +35,7 @@ namespace SGShoesFinal.App_Code
         /// <summary>
         /// Manfac Initial
         /// </summary>
-        public int Manfac
+        public int Quantity
         {
             get { return _quantity; }
             set { _quantity = value; }
@@ -96,7 +96,7 @@ namespace SGShoesFinal.App_Code
         /// <param name="dob">DBObject Date of Birth</param>
         /// <param name="active">Active Account</param>
         /// <param name="rate">Hourly Rate</param>
-        public Product_Detail(int prodId, int sSize, int sQuant)
+        public Product_Detail(int prodId, double sSize, int sQuant)
             : this(0, prodId, sSize, sQuant) { }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace SGShoesFinal.App_Code
         /// <param name="dob">DBObject Date of Birth</param>
         /// <param name="active">Active Account</param>
         /// <param name="rate">Hourly Rate</param>
-        public Product_Detail(int id, int prodId, int sSize, int sQuant)
+        public Product_Detail(int id, int prodId, double sSize, int sQuant)
         {
             _id = id;
             _prodId = prodId;
@@ -125,7 +125,7 @@ namespace SGShoesFinal.App_Code
             _quantity = sQuant;
         }
 
-        public static List<Product_Detail> getAllProducts()
+        public static List<Product_Detail> getAllProductDets()
         {
             DBUtils dataAccessLayer = new DBUtils();
             return dataAccessLayer.ProductDetSelectAll();
