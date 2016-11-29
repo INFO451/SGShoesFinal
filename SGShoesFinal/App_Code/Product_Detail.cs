@@ -124,5 +124,44 @@ namespace SGShoesFinal.App_Code
             _size = sSize;
             _quantity = sQuant;
         }
+
+        public static List<Product_Detail> getAllProducts()
+        {
+            DBUtils dataAccessLayer = new DBUtils();
+            return dataAccessLayer.ProductDetSelectAll();
+        }
+
+
+        public static void insertProductDet(Product_Detail newProductDet)
+        {
+            DBUtils dataAccessLayer = new DBUtils();
+            dataAccessLayer.ProductDetInsert(newProductDet);
+        }
+
+        /// <summary>
+        /// Deletes an existing product
+        /// </summary>
+        /// <param name="id">Product Id</param>
+        public static void deleteProductDet(Product_Detail objectToDelete)
+        {
+            int id = objectToDelete.Id;
+            if (id < 1)
+                throw new ArgumentException("Product Id must be greater than 0", "id");
+
+            DBUtils dataAccessLayer = new DBUtils();
+            dataAccessLayer.ProductDetDelete(id);
+        }
+
+
+        public static void updateProductDet(Product_Detail productDetToUpdate)
+        {
+            if (productDetToUpdate.Id < 1)
+                throw new ArgumentException("Product Id must be greater than 0", "id");
+
+            DBUtils dataAccessLayer = new DBUtils();
+            dataAccessLayer.ProductDetUpdate(productDetToUpdate);
+        }
+
+
     }
 }

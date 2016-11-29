@@ -123,7 +123,6 @@
     <Content Include="App_Code\Order.cs" />
     <Content Include="App_Code\Product.cs" />
     <Content Include="App_Code\Product_Detail.cs" />
-    <Content Include="App_Code\DBObject.cs" />
     <Content Include="App_Code\BusinessLogic.cs" />
     <Content Include="App_Code\DBUtils.cs" />
     <Compile Include="Global.asax.cs">
