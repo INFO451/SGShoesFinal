@@ -13,5 +13,10 @@ namespace SGShoesFinal.Masters
         {
 
         }
+
+        protected void QuantDD_DataBound(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

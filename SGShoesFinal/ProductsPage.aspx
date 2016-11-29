@@ -35,7 +35,7 @@
         <asp:Label ID="unitPriceLabel" runat="server" Text='<%# Eval("unitPrice") %>' />
         <asp:DropDownList ID="SizeDD" runat="server" AutoPostBack="True" DataSourceID="SqlDetailDataSize" DataTextField="Size" DataValueField="Size">
         </asp:DropDownList>
-        <asp:DropDownList ID="QuantDD" runat="server" AutoPostBack="True" DataSourceID="SqlDetailDataQuant" DataTextField="Quantity" DataValueField="Quantity">
+        <asp:DropDownList ID="QuantDD" runat="server" AutoPostBack="True" DataSourceID="SqlDetailDataQuant" DataTextField="Quantity" DataValueField="Quantity" OnDataBound="QuantDD_DataBound">
         </asp:DropDownList>
 <br />
         <asp:SqlDataSource ID="SqlDetailDataSize" runat="server" ConnectionString="<%$ ConnectionStrings:fall16_g2ConnectionString %>" SelectCommand="SELECT [Size] FROM [Product_Detail] WHERE ([Product_Id] = @Product_Id)">
