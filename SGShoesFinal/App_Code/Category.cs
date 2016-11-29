@@ -6,7 +6,7 @@ using SGShoesFinal.App_Code;
 
 namespace SGShoesFinal.App_Code
 {
-    public class Category : DBObject
+    public class Category
     {
     }
 }

@@ -29,7 +29,7 @@ namespace SGShoesFinal.App_Code
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    int dID = (int)reader["Product_Id"];
+                  /*  int dID = (int)reader["Product_Id"];
                     int dCID = (int)reader["Category_Id"];
                     string dprod = (string)reader["Product_Name"];
                     string dmanu = (string)reader["Manufacturer"];
@@ -40,9 +40,9 @@ namespace SGShoesFinal.App_Code
                     decimal dprice = (decimal)reader["Unit_Price"];
                     string keywords = (string)reader["Keywords"];
                     string dimagesmall = (string)reader["Image_Location_Small"];
-                    string dimagelage = (string)reader["Image_Location_Large"];
+                    string dimagelage = (string)reader["Image_Location_Large"]; 
 
-                    colProduct.Add(new Product(dID, dCID, dprod, dmanu, dshortdes, dlongdes, dweight, dprice, keywords, dimagesmall, dimagelage));
+                    colProduct.Add(new Product(dID, dCID, dprod, dmanu, dshortdes, dlongdes, dweight, dprice, keywords, dimagesmall, dimagelage)); */
                     colProduct.Add(new Product(
                         (int)reader["Product_Id"],
                         (int)reader["Category_Id"],

@@ -24,11 +24,11 @@
             <a class="menul" href="Page3.aspx">MY ACCOUNT</a>                
         </div>
             </div>
-        <div class>   
+        <div class="">   
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:fall16_g2ConnectionString %>" SelectCommand="SELECT * FROM [Category]"></asp:SqlDataSource>
         </asp:ContentPlaceHolder>
-            <hr />
+    
         </div>
     </div>
     </form>

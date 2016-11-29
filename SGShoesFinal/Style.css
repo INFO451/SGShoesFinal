@@ -31,12 +31,12 @@
     text-align: center; 
     font-family: "Courier New", Courier, monospace; 
     font-size:20px;  
-    padding: 15px;
+    padding: 10px;
     border-bottom: 1px solid black !important;
     border-top: 2px solid black !important; 
     border-radius: 0 !important;
-    width: 600px;
-    margin: 0 auto;
+    width: 100%;
+    margin: 0 auto !important;
 }
 
 .navbar a:link
@@ -70,6 +70,25 @@ h2.refine {
 }
 
 .section{
+    text-align:left !important;
+    list-style:none;
+    padding-left:unset;
+    font-family: Tahoma,Arial,sans-serif;
+}
+
+.panel{
+    clear: both;
+    overflow: hidden;
+    padding: 0 0 6px;
+    position: relative;
     border-bottom: 1px solid #999;
-    font-family:Georgia !important;
+}
+
+ul {
+    color: #666;
+    display: block;
+    font-size: 0.66em;
+    line-height: 1.3em !important;
+    margin: 4px 0 0 0;
+
 }
