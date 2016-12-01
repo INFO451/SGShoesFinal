@@ -1,4 +1,7 @@
-﻿using System;
+﻿/* Product - Select, Insert
+   Category -Select
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -29,20 +32,6 @@ namespace SGShoesFinal.App_Code
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                  /*  int dID = (int)reader["Product_Id"];
-                    int dCID = (int)reader["Category_Id"];
-                    string dprod = (string)reader["Product_Name"];
-                    string dmanu = (string)reader["Manufacturer"];
-                    string dshortdes = (string)reader["Description_Short"];
-                    string dlongdes = (string)reader["Description_Long"];
-
-                    double dweight = (double)reader["Unit_Weight"];
-                    decimal dprice = (decimal)reader["Unit_Price"];
-                    string keywords = (string)reader["Keywords"];
-                    string dimagesmall = (string)reader["Image_Location_Small"];
-                    string dimagelage = (string)reader["Image_Location_Large"]; 
-
-                    colProduct.Add(new Product(dID, dCID, dprod, dmanu, dshortdes, dlongdes, dweight, dprice, keywords, dimagesmall, dimagelage)); */
                     colProduct.Add(new Product(
                         (int)reader["Product_Id"],
                         (int)reader["Category_Id"],
@@ -65,33 +54,31 @@ namespace SGShoesFinal.App_Code
         /// Inserts an Product
         /// </summary>
         /// <param name="newProduct">Product</param>
+        //TODO
         public void ProductInsert(Product newProduct)
         {
             // Create connection
             SqlConnection con = new SqlConnection(_connectionString);
-            /*
+            
             // Create command
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
-            cmd.CommandText = "INSERT Product (Description_Short,Manufacturer, Product_Name,Description_Long,Unit_Weight, Keywords, Unit_Price, Image_Location_Small, EMAIL, DOB, Image_Location_Large) VALUES (@FName,@Middle,@LName,@Gender,@SAdress,@City,@State,@Zip,@Email,@Dob,@HPhone,@Cell,@Active,@Rate)";
-
+            cmd.CommandText = "INSERT Product(Product_Id,Category_Id, Product_Name, Manufacturer, Description_Short, Description_Long ,Unit_Weight, Unit_Price, Keywords, Image_Location_Small, Image_Location_Large) VALUES (@ProdID,@CatID,@ProdName,@Manufac,@SDescrip,@LDescrip,@Price,@Weight,@Keywords,@Spic,@Lpic)";
+            
             // Add parameters
-            cmd.Parameters.AddWithValue("@FName", newProduct.FName);
-            cmd.Parameters.AddWithValue("@Middle", newProduct.Middle);
-            cmd.Parameters.AddWithValue("@LName", newProduct.LName);
-            cmd.Parameters.AddWithValue("@SAdress", newProduct.SAdress);
-            cmd.Parameters.AddWithValue("@Gender", newProduct.Gender);
+            cmd.Parameters.AddWithValue("@ProdID", newProduct.Id);
+            cmd.Parameters.AddWithValue("@CatID", newProduct.CatId);
+            cmd.Parameters.AddWithValue("@ProdName", newProduct.ProdName);
+            cmd.Parameters.AddWithValue("@Manufac", newProduct.Manfac);
+            cmd.Parameters.AddWithValue("@SDescrip", newProduct.ShortDescrip);
 
-            cmd.Parameters.AddWithValue("@City", newProduct.City);
-            cmd.Parameters.AddWithValue("@State", newProduct.State);
-            cmd.Parameters.AddWithValue("@Zip", newProduct.Zip);
-            cmd.Parameters.AddWithValue("@Email", newProduct.Email);
-            cmd.Parameters.AddWithValue("@Dob", newProduct.DOB);
+            cmd.Parameters.AddWithValue("@LDescrip", newProduct.LongDescrip);
+            cmd.Parameters.AddWithValue("@Price", newProduct.unitPrice);
+            cmd.Parameters.AddWithValue("@Weight", newProduct.UnitWeight);
+            cmd.Parameters.AddWithValue("@Keywords", newProduct.Keywords);
+            cmd.Parameters.AddWithValue("@Spic", newProduct.ImageLocSmall);
 
-            cmd.Parameters.AddWithValue("@Hphone", newProduct.HPhone);
-            cmd.Parameters.AddWithValue("@Cell", newProduct.Cell);
-            cmd.Parameters.AddWithValue("@Active", newProduct.Active);
-            cmd.Parameters.AddWithValue("@Rate", newProduct.Rate);
+            cmd.Parameters.AddWithValue("@Lpic", newProduct.ImageLocLarge);
 
             // Execute command
             using (con)
@@ -99,9 +86,9 @@ namespace SGShoesFinal.App_Code
                 con.Open();
                 cmd.ExecuteNonQuery();
 
-            } */
+            } 
         }
-
+        //TODO
         /// <summary>
         /// Updates an Product
         /// </summary>
