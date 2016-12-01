@@ -12,7 +12,7 @@ namespace SGShoesFinal.App_Code
     {
         private static readonly string _connectionString = string.Empty;
 
-       public List<Product> ProductSelectAll()
+        public List<Product> ProductSelectAll()
         {
             List<Product> colProduct = new List<Product>();
 
@@ -29,20 +29,20 @@ namespace SGShoesFinal.App_Code
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                  /*  int dID = (int)reader["Product_Id"];
-                    int dCID = (int)reader["Category_Id"];
-                    string dprod = (string)reader["Product_Name"];
-                    string dmanu = (string)reader["Manufacturer"];
-                    string dshortdes = (string)reader["Description_Short"];
-                    string dlongdes = (string)reader["Description_Long"];
+                    /*  int dID = (int)reader["Product_Id"];
+                      int dCID = (int)reader["Category_Id"];
+                      string dprod = (string)reader["Product_Name"];
+                      string dmanu = (string)reader["Manufacturer"];
+                      string dshortdes = (string)reader["Description_Short"];
+                      string dlongdes = (string)reader["Description_Long"];
 
-                    double dweight = (double)reader["Unit_Weight"];
-                    decimal dprice = (decimal)reader["Unit_Price"];
-                    string keywords = (string)reader["Keywords"];
-                    string dimagesmall = (string)reader["Image_Location_Small"];
-                    string dimagelage = (string)reader["Image_Location_Large"]; 
+                      double dweight = (double)reader["Unit_Weight"];
+                      decimal dprice = (decimal)reader["Unit_Price"];
+                      string keywords = (string)reader["Keywords"];
+                      string dimagesmall = (string)reader["Image_Location_Small"];
+                      string dimagelage = (string)reader["Image_Location_Large"]; 
 
-                    colProduct.Add(new Product(dID, dCID, dprod, dmanu, dshortdes, dlongdes, dweight, dprice, keywords, dimagesmall, dimagelage)); */
+                      colProduct.Add(new Product(dID, dCID, dprod, dmanu, dshortdes, dlongdes, dweight, dprice, keywords, dimagesmall, dimagelage)); */
                     colProduct.Add(new Product(
                         (int)reader["Product_Id"],
                         (int)reader["Category_Id"],
@@ -111,37 +111,37 @@ namespace SGShoesFinal.App_Code
 
             SqlConnection con = new SqlConnection(_connectionString);
 
-/*
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = con;
-            cmd.CommandText = "UPDATE Product SET Description_Short=@FName,Product_Name=@LName,Manufacturer=@Middle,Description_Long=@Gender,Unit_Weight=@SAdress,Keywords=@City,Unit_Price=@State,Image_Location_Small=@Zip,EMAIL=@Email,DOB=@DOB,Image_Location_Large=@Hphone WHERE Product_Id=@Id";
+            /*
+                        SqlCommand cmd = new SqlCommand();
+                        cmd.Connection = con;
+                        cmd.CommandText = "UPDATE Product SET Description_Short=@FName,Product_Name=@LName,Manufacturer=@Middle,Description_Long=@Gender,Unit_Weight=@SAdress,Keywords=@City,Unit_Price=@State,Image_Location_Small=@Zip,EMAIL=@Email,DOB=@DOB,Image_Location_Large=@Hphone WHERE Product_Id=@Id";
 
-            cmd.Parameters.AddWithValue("@LName", employeeToUpdate.LName);
-            cmd.Parameters.AddWithValue("@FName", employeeToUpdate.FName);
-            cmd.Parameters.AddWithValue("@Middle", employeeToUpdate.Middle);
-            cmd.Parameters.AddWithValue("@SAdress", employeeToUpdate.SAdress);
-            cmd.Parameters.AddWithValue("@Gender", employeeToUpdate.Gender);
+                        cmd.Parameters.AddWithValue("@LName", employeeToUpdate.LName);
+                        cmd.Parameters.AddWithValue("@FName", employeeToUpdate.FName);
+                        cmd.Parameters.AddWithValue("@Middle", employeeToUpdate.Middle);
+                        cmd.Parameters.AddWithValue("@SAdress", employeeToUpdate.SAdress);
+                        cmd.Parameters.AddWithValue("@Gender", employeeToUpdate.Gender);
 
-            cmd.Parameters.AddWithValue("@State", employeeToUpdate.State);
-            cmd.Parameters.AddWithValue("@City", employeeToUpdate.City);
-            cmd.Parameters.AddWithValue("@Zip", employeeToUpdate.Zip);
-            cmd.Parameters.AddWithValue("@Email", employeeToUpdate.Email);
-            cmd.Parameters.AddWithValue("@Dob", employeeToUpdate.DOB);
+                        cmd.Parameters.AddWithValue("@State", employeeToUpdate.State);
+                        cmd.Parameters.AddWithValue("@City", employeeToUpdate.City);
+                        cmd.Parameters.AddWithValue("@Zip", employeeToUpdate.Zip);
+                        cmd.Parameters.AddWithValue("@Email", employeeToUpdate.Email);
+                        cmd.Parameters.AddWithValue("@Dob", employeeToUpdate.DOB);
 
-            cmd.Parameters.AddWithValue("@HPhone", employeeToUpdate.HPhone);
-            cmd.Parameters.AddWithValue("@Cell", employeeToUpdate.Cell);
-            cmd.Parameters.AddWithValue("@Active", employeeToUpdate.Active);
-            cmd.Parameters.AddWithValue("@Rate", employeeToUpdate.Rate); 
+                        cmd.Parameters.AddWithValue("@HPhone", employeeToUpdate.HPhone);
+                        cmd.Parameters.AddWithValue("@Cell", employeeToUpdate.Cell);
+                        cmd.Parameters.AddWithValue("@Active", employeeToUpdate.Active);
+                        cmd.Parameters.AddWithValue("@Rate", employeeToUpdate.Rate); 
 
 
-            cmd.Parameters.AddWithValue("@Id", employeeToUpdate.Id);
+                        cmd.Parameters.AddWithValue("@Id", employeeToUpdate.Id);
 
-            using (con)
-            {
-                con.Open();
-                cmd.ExecuteNonQuery();
+                        using (con)
+                        {
+                            con.Open();
+                            cmd.ExecuteNonQuery();
 
-            } */
+                        } */
         }
 
 
@@ -203,7 +203,7 @@ namespace SGShoesFinal.App_Code
                         (int)reader["Product_Detail_Id"],
                         (int)reader["Product_Id"],
                         (double)reader["Size"],
-                        (int)reader["Quantity"]                        
+                        (int)reader["Quantity"]
                         ));
                 }
             }
@@ -320,6 +320,74 @@ namespace SGShoesFinal.App_Code
 
 
 
+    public List<Category> CategorySelectAll()
+    {
+        List<Category> colCategory = new List<Category>();
+
+        SqlConnection con = new SqlConnection(_connectionString);
+
+        SqlCommand cmd = new SqlCommand();
+        cmd.Connection = con;
+        cmd.CommandText = "SELECT Category_Id, Category_Name, Category_Description FROM Category";
+
+        // Execute command
+        using (con)
+        {
+            con.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                colCategory.Add(new Category(
+                    (int)reader["Category_Id"],
+                    (string)reader["Category_Name"],
+                    (string)reader["Category_Description"]));
+            }
+        }
+        return colCategory;
+    }
+      void  CategoryUpdate()
+        { }
+
+        void CategoryDelete()
+        { }
+
+        void CategoryInsert()
+        { }
+
+
+        public List<Customer> CustomerSelectAll()
+        {
+            List<Customer> colCustomer = new List<Customer>();
+
+            SqlConnection con = new SqlConnection(_connectionString);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "SELECT Customer_Id, First_Name, Last_Name, Customer_Type, Shipping_Address, Billing_Address, Phone, Email, Username, Password, Website, Credit_Approval, Status_Flag FROM Category";
+
+            // Execute command
+            using (con)
+            {
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    colCustomer.Add(new Customer(
+                        (int)reader["Category_Id"],
+                        (string)reader["Category_Name"],
+                        (string)reader["Category_Description"]));
+                }
+            }
+            return colCustomer;
+        }
+        void CustomerUpdate()
+        { }
+
+        void CustomerDelete()
+        { }
+
+        void CustomerInsert()
+        { }
 
         static DBUtils()
         {
@@ -329,3 +397,4 @@ namespace SGShoesFinal.App_Code
         }
     }
 }
+
