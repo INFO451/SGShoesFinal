@@ -332,34 +332,32 @@ namespace SGShoesFinal.App_Code
             }
             return colCategory;
         }
-        void CategoryUpdate()
-        {public void CategoryUpdate(Category newCategory)}
+        public void CategoryUpdate(Category CategoryToUpdate)
+        {
             SqlConnection con = new SqlConnection(_connectionString);
 
-          
-                        SqlCommand cmd = new SqlCommand();
-                        cmd.Connection = con;
-                        cmd.CommandText = "UPDATE Category SET Description_Short=@CatId,CatName=@CatDesc WHERE Category_Id=@CatId";
 
-                        cmd.Parameters.AddWithValue("@CatId", employeeToUpdate.CategoryId);
-                        cmd.Parameters.AddWithValue("@CatName", employeeToUpdate.CategoryName);
-                        cmd.Parameters.AddWithValue("@CatDesc", employeeToUpdate.CategoryDescription);
-                  
-                        cmd.Parameters.AddWithValue("@CatId", employeeToUpdate.CategoryId);
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "UPDATE Category SET Description_Short=@CatId,CatName=@CatDesc WHERE Category_Id=@CatId";
 
-                        using (con)
-                        {
-                            con.Open();
-                            cmd.ExecuteNonQuery();
+            cmd.Parameters.AddWithValue("@CatId", CategoryToUpdate.CatId);
+            cmd.Parameters.AddWithValue("@CatName", CategoryToUpdate.CatName);
+            cmd.Parameters.AddWithValue("@CatDesc", CategoryToUpdate.CatDescription);
 
-                        }
+            using (con)
+            {
+                con.Open();
+                cmd.ExecuteNonQuery();
+
+            }
         }
-    }
-        void CategoryDelete()
+        
+    
+        public void CategoryDelete()
         { }
 
-        void CategoryInsert()
-        { public void CategoryInsert(Category newCategory)
+         public void CategoryInsert(Category newCategory)
         {
             // Create connection
             SqlConnection con = new SqlConnection(_connectionString);
@@ -370,9 +368,9 @@ namespace SGShoesFinal.App_Code
             cmd.CommandText = "INSERT Category(Category_Id, Category_Name, Category_Description) VALUES (@CatID,@CatName,@CatDesc)";
 
             // Add parameters
-            cmd.Parameters.AddWithValue("@CatId", newProduct.Id);
-            cmd.Parameters.AddWithValue("@CatName", newProduct.CatName);
-            cmd.Parameters.AddWithValue("@CatDesc", newProduct.CatDesc);
+            cmd.Parameters.AddWithValue("@CatId", newCategory.CatId);
+            cmd.Parameters.AddWithValue("@CatName", newCategory.CatName);
+            cmd.Parameters.AddWithValue("@CatDesc", newCategory.CatDescription);
 
             // Execute command
             using (con)
@@ -382,7 +380,6 @@ namespace SGShoesFinal.App_Code
 
             }
         }
-    }
 
 
         public List<Customer> CustomerSelectAll()
@@ -425,9 +422,8 @@ namespace SGShoesFinal.App_Code
         void CustomerDelete()
         { }
 
-        void CustomerInsert()
-        {public void CustomerInsert(Customer newCustomer)
-    {
+        public void CustomerInsert(Customer newCustomer)
+        {
         // Create connection
         SqlConnection con = new SqlConnection(_connectionString);
 
@@ -447,7 +443,7 @@ namespace SGShoesFinal.App_Code
         cmd.Parameters.AddWithValue("@Phone", newCustomer.CustPhone);
         cmd.Parameters.AddWithValue("@Email", newCustomer.CustEmail);
         cmd.Parameters.AddWithValue("@Username", newCustomer.CustUsername);
-        cmd.Parameters.AddWithValue("@Password", newCustomer.CustPassword);
+        cmd.Parameters.AddWithValue("@Password", newCustomer.CustPass);
         cmd.Parameters.AddWithValue("@Website", newCustomer.CustWebsite);
         cmd.Parameters.AddWithValue("@CredApp", newCustomer.CustCreditApproval);
         cmd.Parameters.AddWithValue("@StatusFlag", newCustomer.CustStatusFlag);
@@ -461,7 +457,6 @@ namespace SGShoesFinal.App_Code
 
         }
     }
-}
 
         public List<Order> OrderSelectAll()
         {
@@ -497,16 +492,15 @@ namespace SGShoesFinal.App_Code
         void OrderDelete()
         { }
 
-        void OrderInsert()
-        {public void OrderInsert(Order newOrder)
-{
-    // Create connection
-    SqlConnection con = new SqlConnection(_connectionString);
+        public void OrderInsert(Order newOrder)
+        {
+            // Create connection
+            SqlConnection con = new SqlConnection(_connectionString);
 
-    // Create command
-    SqlCommand cmd = new SqlCommand();
-    cmd.Connection = con;
-    cmd.CommandText = "INSERT Order(Order_Id, Customer_Id, Product_Id, Quantity, Sale_Date, Order_Status) VALUES (@OrderId,@CustId,@ProdId,@Quantity,@SaleDate,@OrderStatus)";
+            // Create command
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "INSERT Order(Order_Id, Customer_Id, Product_Id, Quantity, Sale_Date, Order_Status) VALUES (@OrderId,@CustId,@ProdId,@Quantity,@SaleDate,@OrderStatus)";
 
     // Add parameters
     cmd.Parameters.AddWithValue("@OrderId", newOrder.OrderId);
@@ -525,9 +519,7 @@ namespace SGShoesFinal.App_Code
         cmd.ExecuteNonQuery();
 
     }
-} }
-
-
+} 
 
         static DBUtils()
         {

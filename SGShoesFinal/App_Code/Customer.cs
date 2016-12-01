@@ -15,6 +15,7 @@ namespace SGShoesFinal.App_Code
         private string _BillingAddress = string.Empty;
         private string _Phone = string.Empty;
         private string _Email = string.Empty;
+        private string _Password = string.Empty;
         private string _Username = string.Empty;
         private string _Website = string.Empty;
         private bool _CreditApproval = false;
@@ -96,6 +97,12 @@ namespace SGShoesFinal.App_Code
         /// <summary>
         /// Customer Username
         /// </summary>
+        /// 
+        public string CustPass
+        {
+            get { return _Username; }
+            set { _Username = value; }
+        }
 
         public string CustWebsite
         {
