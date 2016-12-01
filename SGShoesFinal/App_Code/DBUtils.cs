@@ -32,20 +32,6 @@ namespace SGShoesFinal.App_Code
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                  /*  int dID = (int)reader["Product_Id"];
-                    int dCID = (int)reader["Category_Id"];
-                    string dprod = (string)reader["Product_Name"];
-                    string dmanu = (string)reader["Manufacturer"];
-                    string dshortdes = (string)reader["Description_Short"];
-                    string dlongdes = (string)reader["Description_Long"];
-
-                    double dweight = (double)reader["Unit_Weight"];
-                    decimal dprice = (decimal)reader["Unit_Price"];
-                    string keywords = (string)reader["Keywords"];
-                    string dimagesmall = (string)reader["Image_Location_Small"];
-                    string dimagelage = (string)reader["Image_Location_Large"]; 
-
-                    colProduct.Add(new Product(dID, dCID, dprod, dmanu, dshortdes, dlongdes, dweight, dprice, keywords, dimagesmall, dimagelage)); */
                     colProduct.Add(new Product(
                         (int)reader["Product_Id"],
                         (int)reader["Category_Id"],
@@ -73,12 +59,12 @@ namespace SGShoesFinal.App_Code
         {
             // Create connection
             SqlConnection con = new SqlConnection(_connectionString);
-            
+
             // Create command
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
             cmd.CommandText = "INSERT Product(Product_Id,Category_Id, Product_Name, Manufacturer, Description_Short, Description_Long ,Unit_Weight, Unit_Price, Keywords, Image_Location_Small, Image_Location_Large) VALUES (@ProdID,@CatID,@ProdName,@Manufac,@SDescrip,@LDescrip,@Price,@Weight,@Keywords,@Spic,@Lpic)";
-            
+
             // Add parameters
             cmd.Parameters.AddWithValue("@ProdID", newProduct.Id);
             cmd.Parameters.AddWithValue("@CatID", newProduct.CatId);
@@ -100,7 +86,7 @@ namespace SGShoesFinal.App_Code
                 con.Open();
                 cmd.ExecuteNonQuery();
 
-            } 
+            }
         }
         //TODO
         /// <summary>
@@ -321,39 +307,82 @@ namespace SGShoesFinal.App_Code
 
 
 
-    public List<Category> CategorySelectAll()
-    {
-        List<Category> colCategory = new List<Category>();
-
-        SqlConnection con = new SqlConnection(_connectionString);
-
-        SqlCommand cmd = new SqlCommand();
-        cmd.Connection = con;
-        cmd.CommandText = "SELECT Category_Id, Category_Name, Category_Description FROM Category";
-
-        // Execute command
-        using (con)
+        public List<Category> CategorySelectAll()
         {
-            con.Open();
-            SqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                colCategory.Add(new Category(
-                    (int)reader["Category_Id"],
-                    (string)reader["Category_Name"],
-                    (string)reader["Category_Description"]));
-            }
-        }
-        return colCategory;
-    }
-      void  CategoryUpdate()
-        { }
+            List<Category> colCategory = new List<Category>();
 
+            SqlConnection con = new SqlConnection(_connectionString);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "SELECT Category_Id, Category_Name, Category_Description FROM Category";
+
+            // Execute command
+            using (con)
+            {
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    colCategory.Add(new Category(
+                        (int)reader["Category_Id"],
+                        (string)reader["Category_Name"],
+                        (string)reader["Category_Description"]));
+                }
+            }
+            return colCategory;
+        }
+        void CategoryUpdate()
+        {public void CategoryUpdate(Category newCategory)}
+            SqlConnection con = new SqlConnection(_connectionString);
+
+          
+                        SqlCommand cmd = new SqlCommand();
+                        cmd.Connection = con;
+                        cmd.CommandText = "UPDATE Category SET Description_Short=@CatId,CatName=@CatDesc WHERE Category_Id=@CatId";
+
+                        cmd.Parameters.AddWithValue("@CatId", employeeToUpdate.CategoryId);
+                        cmd.Parameters.AddWithValue("@CatName", employeeToUpdate.CategoryName);
+                        cmd.Parameters.AddWithValue("@CatDesc", employeeToUpdate.CategoryDescription);
+                  
+                        cmd.Parameters.AddWithValue("@CatId", employeeToUpdate.CategoryId);
+
+                        using (con)
+                        {
+                            con.Open();
+                            cmd.ExecuteNonQuery();
+
+                        }
+        }
+    }
         void CategoryDelete()
         { }
 
         void CategoryInsert()
-        { }
+        { public void CategoryInsert(Category newCategory)
+        {
+            // Create connection
+            SqlConnection con = new SqlConnection(_connectionString);
+
+            // Create command
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "INSERT Category(Category_Id, Category_Name, Category_Description) VALUES (@CatID,@CatName,@CatDesc)";
+
+            // Add parameters
+            cmd.Parameters.AddWithValue("@CatId", newProduct.Id);
+            cmd.Parameters.AddWithValue("@CatName", newProduct.CatName);
+            cmd.Parameters.AddWithValue("@CatDesc", newProduct.CatDesc);
+
+            // Execute command
+            using (con)
+            {
+                con.Open();
+                cmd.ExecuteNonQuery();
+
+            }
+        }
+    }
 
 
         public List<Customer> CustomerSelectAll()
@@ -364,7 +393,7 @@ namespace SGShoesFinal.App_Code
 
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
-            cmd.CommandText = "SELECT Customer_Id, First_Name, Last_Name, Customer_Type, Shipping_Address, Billing_Address, Phone, Email, Username, Password, Website, Credit_Approval, Status_Flag FROM Category";
+            cmd.CommandText = "SELECT Customer_Id, First_Name, Last_Name, Customer_Type, Shipping_Address, Billing_Address, Phone, Email, Username, Password, Website, Credit_Approval, Status_Flag FROM Customer";
 
             // Execute command
             using (con)
@@ -374,9 +403,18 @@ namespace SGShoesFinal.App_Code
                 while (reader.Read())
                 {
                     colCustomer.Add(new Customer(
-                        (int)reader["Category_Id"],
-                        (string)reader["Category_Name"],
-                        (string)reader["Category_Description"]));
+                        (int)reader["Customer_Id"],
+                        (string)reader["First_Name"],
+                        (string)reader["Last_Name"],
+                        (string)reader["Customer_Type"],
+                        (string)reader["Shipping_Address"],
+                        (string)reader["Billing_Address"],
+                        (string)reader["Phone"],
+                        (string)reader["Email"],
+                        (string)reader["Username"],
+                        (string)reader["Website"],
+                        (bool)reader["CreditApproval"],
+                        (string)reader["Status_Flag"]));
                 }
             }
             return colCustomer;
@@ -388,7 +426,108 @@ namespace SGShoesFinal.App_Code
         { }
 
         void CustomerInsert()
+        {public void CustomerInsert(Customer newCustomer)
+    {
+        // Create connection
+        SqlConnection con = new SqlConnection(_connectionString);
+
+        // Create command
+        SqlCommand cmd = new SqlCommand();
+        cmd.Connection = con;
+        cmd.CommandText = "INSERT Customer(Customer_Id, First_Name, Last_Name, Customer_Type, Shipping_Address, Billing_Address, Phone, Email, Username, Password, Website, Credit_Approval, Status_Flag) VALUES (@CustId,@FirstName,@LastName,@CustType,@ShipAdd,@BillAdd,@Phone,@Email,@Username,@Password,@Website,@CredApp, @StatusFlag)";
+
+        // Add parameters
+        cmd.Parameters.AddWithValue("@CustID", newCustomer.CustId);
+        cmd.Parameters.AddWithValue("@FirstName", newCustomer.CustFirstName);
+        cmd.Parameters.AddWithValue("@LastName", newCustomer.CustLastName);
+        cmd.Parameters.AddWithValue("@CustType", newCustomer.CustType);
+        cmd.Parameters.AddWithValue("@ShipAdd", newCustomer.CustShippingAddress);
+
+        cmd.Parameters.AddWithValue("@BillAdd", newCustomer.CustBillingAddress);
+        cmd.Parameters.AddWithValue("@Phone", newCustomer.CustPhone);
+        cmd.Parameters.AddWithValue("@Email", newCustomer.CustEmail);
+        cmd.Parameters.AddWithValue("@Username", newCustomer.CustUsername);
+        cmd.Parameters.AddWithValue("@Password", newCustomer.CustPassword);
+        cmd.Parameters.AddWithValue("@Website", newCustomer.CustWebsite);
+        cmd.Parameters.AddWithValue("@CredApp", newCustomer.CustCreditApproval);
+        cmd.Parameters.AddWithValue("@StatusFlag", newCustomer.CustStatusFlag);
+   
+
+        // Execute command
+        using (con)
+        {
+            con.Open();
+            cmd.ExecuteNonQuery();
+
+        }
+    }
+}
+
+        public List<Order> OrderSelectAll()
+        {
+            List<Order> colOrder = new List<Order>();
+
+            SqlConnection con = new SqlConnection(_connectionString);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "SELECT Order_Id, Customer_Id, Product_Id, Quantity, Sale_Date, Order_Status FROM Order";
+
+            // Execute command
+            using (con)
+            {
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    colOrder.Add(new Order(
+                        (int)reader["Order_Id"],
+                        (int)reader["Customer_Id"],
+                        (int)reader["Product_Id"],
+                        (int)reader["Quantity"],
+                        (DateTime)reader["Sale_Date"],
+                        (string)reader["Order_Status"]));
+                }
+            }
+            return colOrder;
+        }
+        void OrderUpdate()
         { }
+
+        void OrderDelete()
+        { }
+
+        void OrderInsert()
+        {public void OrderInsert(Order newOrder)
+{
+    // Create connection
+    SqlConnection con = new SqlConnection(_connectionString);
+
+    // Create command
+    SqlCommand cmd = new SqlCommand();
+    cmd.Connection = con;
+    cmd.CommandText = "INSERT Order(Order_Id, Customer_Id, Product_Id, Quantity, Sale_Date, Order_Status) VALUES (@OrderId,@CustId,@ProdId,@Quantity,@SaleDate,@OrderStatus)";
+
+    // Add parameters
+    cmd.Parameters.AddWithValue("@OrderId", newOrder.OrderId);
+    cmd.Parameters.AddWithValue("@CustId", newOrder.CustId);
+    cmd.Parameters.AddWithValue("@ProdId", newOrder.ProdId);
+    cmd.Parameters.AddWithValue("@Quantity", newOrder.Quantity);
+    cmd.Parameters.AddWithValue("@SaleDate", newOrder.SaleDate);
+
+    cmd.Parameters.AddWithValue("@OrderStatus", newOrder.OrderStatus);
+ 
+
+    // Execute command
+    using (con)
+    {
+        con.Open();
+        cmd.ExecuteNonQuery();
+
+    }
+} }
+
+
 
         static DBUtils()
         {
