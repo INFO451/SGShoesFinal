@@ -355,7 +355,25 @@ namespace SGShoesFinal.App_Code
         
     
         public void CategoryDelete()
-        { }
+        {
+            SqlConnection con = new SqlConnection(_connectionString);
+
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "DELETE Category WHERE Category_Id=@CatId";
+
+
+            cmd.Parameters.AddWithValue("@CatId", CategoryId);
+
+
+            using (con)
+            {
+                con.Open();
+                cmd.ExecuteNonQuery();
+
+            }
+        }
 
          public void CategoryInsert(Category newCategory)
         {
@@ -417,10 +435,60 @@ namespace SGShoesFinal.App_Code
             return colCustomer;
         }
         void CustomerUpdate()
-        { }
+        {
+            SqlConnection con = new SqlConnection(_connectionString);
+
+                      SqlCommand cmd = new SqlCommand();
+                        cmd.Connection = con;
+                        cmd.CommandText = "UPDATE Customer SET Description_Short=@Cust_Id,First_Name=@Last_Name,Cust_Type=@Ship_Add,Bill_Add=@Phone,Email=@Username,Password=@Website,Credit_Approval=@Status_Flag WHERE Customer_Id=@Cust_Id";
+
+                        cmd.Parameters.AddWithValue("@Cust_Id", employeeToUpdate.Customer_Id);
+                        cmd.Parameters.AddWithValue("@First_Name", employeeToUpdate.First_Name);
+                        cmd.Parameters.AddWithValue("@Last_Name", employeeToUpdate.Last_Name);
+                        cmd.Parameters.AddWithValue("@Cust_Type", employeeToUpdate.Customer_Type);
+                        cmd.Parameters.AddWithValue("@ShipAdd", employeeToUpdate.Shipping_Address);
+
+                        cmd.Parameters.AddWithValue("@Bill_Add", employeeToUpdate.Billing_Address);
+                        cmd.Parameters.AddWithValue("@Phone", employeeToUpdate.Phone);
+                        cmd.Parameters.AddWithValue("@Email", employeeToUpdate.Email);
+                        cmd.Parameters.AddWithValue("@Username", employeeToUpdate.Username);
+                        cmd.Parameters.AddWithValue("@Password", employeeToUpdate.Password);
+
+                        cmd.Parameters.AddWithValue("@Website", employeeToUpdate.Website);
+                        cmd.Parameters.AddWithValue("@Credit_Approval", employeeToUpdate.Credit_Approval);
+                        cmd.Parameters.AddWithValue("@Status_Flag", employeeToUpdate.Status_Flag); 
+
+
+                        cmd.Parameters.AddWithValue("@Cust_Id", employeeToUpdate.Customer_Id);
+
+                        using (con)
+                        {
+                            con.Open();
+                            cmd.ExecuteNonQuery();
+
+                        } 
+        }
 
         void CustomerDelete()
-        { }
+        {
+            SqlConnection con = new SqlConnection(_connectionString);
+
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "DELETE Customer WHERE Customer_Id=@CustId";
+
+
+            cmd.Parameters.AddWithValue("@CustId", Customer_Id);
+
+
+            using (con)
+            {
+                con.Open();
+                cmd.ExecuteNonQuery();
+
+            }
+        }
 
         public void CustomerInsert(Customer newCustomer)
         {
@@ -487,10 +555,52 @@ namespace SGShoesFinal.App_Code
             return colOrder;
         }
         void OrderUpdate()
-        { }
+        {
+            SqlConnection con = new SqlConnection(_connectionString);
+
+                        SqlCommand cmd = new SqlCommand();
+                        cmd.Connection = con;
+                        cmd.CommandText = "UPDATE Order SET Description_Short=@Order_Id,Cust_ID=@Prod_Id,Quantity=@Sale_Date,Order_Status WHERE Order_Id=@Order_Id";
+
+                        cmd.Parameters.AddWithValue("@Order_Id", employeeToUpdate.LName);
+                        cmd.Parameters.AddWithValue("@Cust_Id", employeeToUpdate.FName);
+                        cmd.Parameters.AddWithValue("@Prod_Id", employeeToUpdate.Middle);
+                        cmd.Parameters.AddWithValue("@Quantity", employeeToUpdate.SAdress);
+                        cmd.Parameters.AddWithValue("@Sale_Date", employeeToUpdate.Gender);
+
+                        cmd.Parameters.AddWithValue("@Order_Status", employeeToUpdate.State);
+
+
+                        cmd.Parameters.AddWithValue("@Order_Id", employeeToUpdate.Order_Id);
+
+                        using (con)
+                        {
+                            con.Open();
+                            cmd.ExecuteNonQuery();
+
+                        } 
+        }
 
         void OrderDelete()
-        { }
+        {
+            SqlConnection con = new SqlConnection(_connectionString);
+
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "DELETE Order WHERE Order_Id=@OrderId";
+
+
+            cmd.Parameters.AddWithValue("@OrderId", OrderId);
+
+
+            using (con)
+            {
+                con.Open();
+                cmd.ExecuteNonQuery();
+
+            }
+        }
 
         public void OrderInsert(Order newOrder)
         {
