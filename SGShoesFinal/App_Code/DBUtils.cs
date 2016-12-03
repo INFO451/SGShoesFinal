@@ -92,43 +92,35 @@ namespace SGShoesFinal.App_Code
         /// <summary>
         /// Updates an Product
         /// </summary>
-        /// <param name="employeeToUpdate">Product</param>
-        public void ProductUpdate(Product employeeToUpdate)
+        /// <param name="ProductToUpdate">Product</param>
+        public void ProductUpdate(Product ProductToUpdate)
         {
 
             SqlConnection con = new SqlConnection(_connectionString);
 
-            /*
                         SqlCommand cmd = new SqlCommand();
                         cmd.Connection = con;
-                        cmd.CommandText = "UPDATE Product SET Description_Short=@FName,Product_Name=@LName,Manufacturer=@Middle,Description_Long=@Gender,Unit_Weight=@SAdress,Keywords=@City,Unit_Price=@State,Image_Location_Small=@Zip,EMAIL=@Email,DOB=@DOB,Image_Location_Large=@Hphone WHERE Product_Id=@Id";
+                        cmd.CommandText = "UPDATE Product SET Description_Short=@SDescrip,Product_Name=@ProdName,Manufacturer=@Manufac,Description_Long=@LDescrip,Unit_Weight=@Weight,Keywords=@Keywords,Unit_Price=@Price,Image_Location_Small=@SImageLoc,Image_Location_Large=@LImageLoc WHERE Product_Id=@Id";
 
-                        cmd.Parameters.AddWithValue("@LName", employeeToUpdate.LName);
-                        cmd.Parameters.AddWithValue("@FName", employeeToUpdate.FName);
-                        cmd.Parameters.AddWithValue("@Middle", employeeToUpdate.Middle);
-                        cmd.Parameters.AddWithValue("@SAdress", employeeToUpdate.SAdress);
-                        cmd.Parameters.AddWithValue("@Gender", employeeToUpdate.Gender);
+                        cmd.Parameters.AddWithValue("@ProdName", ProductToUpdate.ProdName);
+                        cmd.Parameters.AddWithValue("@SDescrip", ProductToUpdate.ShortDescrip);
+                        cmd.Parameters.AddWithValue("@Manufac", ProductToUpdate.Manfac);
+                        cmd.Parameters.AddWithValue("@Weight", ProductToUpdate.UnitWeight);
+                        cmd.Parameters.AddWithValue("@LDescrip", ProductToUpdate.LongDescrip);
 
-                        cmd.Parameters.AddWithValue("@State", employeeToUpdate.State);
-                        cmd.Parameters.AddWithValue("@City", employeeToUpdate.City);
-                        cmd.Parameters.AddWithValue("@Zip", employeeToUpdate.Zip);
-                        cmd.Parameters.AddWithValue("@Email", employeeToUpdate.Email);
-                        cmd.Parameters.AddWithValue("@Dob", employeeToUpdate.DOB);
+                        cmd.Parameters.AddWithValue("@Price", ProductToUpdate.unitPrice);
+                        cmd.Parameters.AddWithValue("@Keywords", ProductToUpdate.Keywords);
+                        cmd.Parameters.AddWithValue("@SImageLoc", ProductToUpdate.ImageLocSmall);
+                        cmd.Parameters.AddWithValue("@LImageLoc", ProductToUpdate.ImageLocLarge);
 
-                        cmd.Parameters.AddWithValue("@HPhone", employeeToUpdate.HPhone);
-                        cmd.Parameters.AddWithValue("@Cell", employeeToUpdate.Cell);
-                        cmd.Parameters.AddWithValue("@Active", employeeToUpdate.Active);
-                        cmd.Parameters.AddWithValue("@Rate", employeeToUpdate.Rate); 
-
-
-                        cmd.Parameters.AddWithValue("@Id", employeeToUpdate.Id);
+                        cmd.Parameters.AddWithValue("@Id", ProductToUpdate.Id);
 
                         using (con)
                         {
                             con.Open();
                             cmd.ExecuteNonQuery();
 
-                        } */
+                        } 
         }
 
 
@@ -209,16 +201,16 @@ namespace SGShoesFinal.App_Code
             // Create command
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
-            cmd.CommandText = "INSERT Product (Description_Short,Manufacturer, Product_Name,Description_Long,Unit_Weight, Keywords, Unit_Price, Image_Location_Small, EMAIL, DOB, Image_Location_Large) VALUES (@FName,@Middle,@LName,@Gender,@SAdress,@City,@State,@Zip,@Email,@Dob,@HPhone,@Cell,@Active,@Rate)";
+            cmd.CommandText = "INSERT Product (Description_Short,Manufacturer, Product_Name,Description_Long,Unit_Weight, Keywords, Unit_Price, Image_Location_Small, EMAIL, DOB, Image_Location_Large) VALUES (@FName,@Manufac,@LName,@Gender,@SAdress,@Keywords,@State,@Zip,@Email,@Dob,@HPhone,@Cell,@Active,@Rate)";
 
             // Add parameters
             cmd.Parameters.AddWithValue("@FName", newProduct.FName);
-            cmd.Parameters.AddWithValue("@Middle", newProduct.Middle);
+            cmd.Parameters.AddWithValue("@Manufac", newProduct.Manufac);
             cmd.Parameters.AddWithValue("@LName", newProduct.LName);
             cmd.Parameters.AddWithValue("@SAdress", newProduct.SAdress);
             cmd.Parameters.AddWithValue("@Gender", newProduct.Gender);
 
-            cmd.Parameters.AddWithValue("@City", newProduct.City);
+            cmd.Parameters.AddWithValue("@Keywords", newProduct.Keywords);
             cmd.Parameters.AddWithValue("@State", newProduct.State);
             cmd.Parameters.AddWithValue("@Zip", newProduct.Zip);
             cmd.Parameters.AddWithValue("@Email", newProduct.Email);
@@ -241,7 +233,7 @@ namespace SGShoesFinal.App_Code
         /// <summary>
         /// Updates an Product
         /// </summary>
-        /// <param name="employeeToUpdate">Product</param>
+        /// <param name="ProductDetToUpdate">Product</param>
         public void ProductDetUpdate(Product_Detail prodDetToUpdate)
         {
 
@@ -250,27 +242,27 @@ namespace SGShoesFinal.App_Code
             /*
                         SqlCommand cmd = new SqlCommand();
                         cmd.Connection = con;
-                        cmd.CommandText = "UPDATE Product SET Description_Short=@FName,Product_Name=@LName,Manufacturer=@Middle,Description_Long=@Gender,Unit_Weight=@SAdress,Keywords=@City,Unit_Price=@State,Image_Location_Small=@Zip,EMAIL=@Email,DOB=@DOB,Image_Location_Large=@Hphone WHERE Product_Id=@Id";
+                        cmd.CommandText = "UPDATE Product SET Description_Short=@FName,Product_Name=@LName,Manufacturer=@Manufac,Description_Long=@Gender,Unit_Weight=@SAdress,Keywords=@Keywords,Unit_Price=@State,Image_Location_Small=@Zip,EMAIL=@Email,DOB=@DOB,Image_Location_Large=@Hphone WHERE Product_Id=@Id";
 
-                        cmd.Parameters.AddWithValue("@LName", employeeToUpdate.LName);
-                        cmd.Parameters.AddWithValue("@FName", employeeToUpdate.FName);
-                        cmd.Parameters.AddWithValue("@Middle", employeeToUpdate.Middle);
-                        cmd.Parameters.AddWithValue("@SAdress", employeeToUpdate.SAdress);
-                        cmd.Parameters.AddWithValue("@Gender", employeeToUpdate.Gender);
+                        cmd.Parameters.AddWithValue("@LName", ProductDetToUpdate.LName);
+                        cmd.Parameters.AddWithValue("@SDescrip", ProductDetToUpdate.FName);
+                        cmd.Parameters.AddWithValue("@Manufac", ProductDetToUpdate.Manufac);
+                        cmd.Parameters.AddWithValue("@SAdress", ProductDetToUpdate.SAdress);
+                        cmd.Parameters.AddWithValue("@Gender", ProductDetToUpdate.Gender);
 
-                        cmd.Parameters.AddWithValue("@State", employeeToUpdate.State);
-                        cmd.Parameters.AddWithValue("@City", employeeToUpdate.City);
-                        cmd.Parameters.AddWithValue("@Zip", employeeToUpdate.Zip);
-                        cmd.Parameters.AddWithValue("@Email", employeeToUpdate.Email);
-                        cmd.Parameters.AddWithValue("@Dob", employeeToUpdate.DOB);
+                        cmd.Parameters.AddWithValue("@State", ProductDetToUpdate.State);
+                        cmd.Parameters.AddWithValue("@Keywords", productDetToUpdate.Keywords);
+                        cmd.Parameters.AddWithValue("@Zip", productDetToUpdate.Zip);
+                        cmd.Parameters.AddWithValue("@Email", productDetToUpdate.Email);
+                        cmd.Parameters.AddWithValue("@Dob", productDetToUpdate.DOB);
 
-                        cmd.Parameters.AddWithValue("@HPhone", employeeToUpdate.HPhone);
-                        cmd.Parameters.AddWithValue("@Cell", employeeToUpdate.Cell);
-                        cmd.Parameters.AddWithValue("@Active", employeeToUpdate.Active);
-                        cmd.Parameters.AddWithValue("@Rate", employeeToUpdate.Rate); 
+                        cmd.Parameters.AddWithValue("@HPhone", productDetToUpdate.HPhone);
+                        cmd.Parameters.AddWithValue("@Cell", productDetToUpdate.Cell);
+                        cmd.Parameters.AddWithValue("@Active", productDetToUpdate.Active);
+                        cmd.Parameters.AddWithValue("@Rate", productDetToUpdate.Rate); 
 
 
-                        cmd.Parameters.AddWithValue("@Id", employeeToUpdate.Id);
+                        cmd.Parameters.AddWithValue("@Id", productDetToUpdate.Id);
 
                         using (con)
                         {
@@ -302,8 +294,6 @@ namespace SGShoesFinal.App_Code
 
             }
         }
-
-
 
 
 
@@ -354,7 +344,7 @@ namespace SGShoesFinal.App_Code
         }
         
     
-        public void CategoryDelete()
+        public void CategoryDelete(Category cat)
         {
             SqlConnection con = new SqlConnection(_connectionString);
 
@@ -364,7 +354,7 @@ namespace SGShoesFinal.App_Code
             cmd.CommandText = "DELETE Category WHERE Category_Id=@CatId";
 
 
-            cmd.Parameters.AddWithValue("@CatId", CategoryId);
+            cmd.Parameters.AddWithValue("@CatId", cat.CatId);
 
 
             using (con)
@@ -434,7 +424,7 @@ namespace SGShoesFinal.App_Code
             }
             return colCustomer;
         }
-        void CustomerUpdate()
+        void CustomerUpdate(Customer custToUpdate)
         {
             SqlConnection con = new SqlConnection(_connectionString);
 
@@ -442,24 +432,21 @@ namespace SGShoesFinal.App_Code
                         cmd.Connection = con;
                         cmd.CommandText = "UPDATE Customer SET Description_Short=@Cust_Id,First_Name=@Last_Name,Cust_Type=@Ship_Add,Bill_Add=@Phone,Email=@Username,Password=@Website,Credit_Approval=@Status_Flag WHERE Customer_Id=@Cust_Id";
 
-                        cmd.Parameters.AddWithValue("@Cust_Id", employeeToUpdate.Customer_Id);
-                        cmd.Parameters.AddWithValue("@First_Name", employeeToUpdate.First_Name);
-                        cmd.Parameters.AddWithValue("@Last_Name", employeeToUpdate.Last_Name);
-                        cmd.Parameters.AddWithValue("@Cust_Type", employeeToUpdate.Customer_Type);
-                        cmd.Parameters.AddWithValue("@ShipAdd", employeeToUpdate.Shipping_Address);
+                        cmd.Parameters.AddWithValue("@Cust_Id", custToUpdate.CustId);
+                        cmd.Parameters.AddWithValue("@First_Name", custToUpdate.CustFirstName);
+                        cmd.Parameters.AddWithValue("@Last_Name", custToUpdate.CustLastName);
+                        cmd.Parameters.AddWithValue("@Cust_Type", custToUpdate.CustType);
+                        cmd.Parameters.AddWithValue("@ShipAdd", custToUpdate.CustShippingAddress);
 
-                        cmd.Parameters.AddWithValue("@Bill_Add", employeeToUpdate.Billing_Address);
-                        cmd.Parameters.AddWithValue("@Phone", employeeToUpdate.Phone);
-                        cmd.Parameters.AddWithValue("@Email", employeeToUpdate.Email);
-                        cmd.Parameters.AddWithValue("@Username", employeeToUpdate.Username);
-                        cmd.Parameters.AddWithValue("@Password", employeeToUpdate.Password);
+                        cmd.Parameters.AddWithValue("@Bill_Add", custToUpdate.CustBillingAddress);
+                        cmd.Parameters.AddWithValue("@Phone", custToUpdate.CustPhone);
+                        cmd.Parameters.AddWithValue("@Email", custToUpdate.CustEmail);
+                        cmd.Parameters.AddWithValue("@Username", custToUpdate.CustUsername);
+                        cmd.Parameters.AddWithValue("@Password", custToUpdate.CustPass);
 
-                        cmd.Parameters.AddWithValue("@Website", employeeToUpdate.Website);
-                        cmd.Parameters.AddWithValue("@Credit_Approval", employeeToUpdate.Credit_Approval);
-                        cmd.Parameters.AddWithValue("@Status_Flag", employeeToUpdate.Status_Flag); 
-
-
-                        cmd.Parameters.AddWithValue("@Cust_Id", employeeToUpdate.Customer_Id);
+                        cmd.Parameters.AddWithValue("@Website", custToUpdate.CustWebsite);
+                        cmd.Parameters.AddWithValue("@Credit_Approval", custToUpdate.CustCreditApproval);
+                        cmd.Parameters.AddWithValue("@Status_Flag", custToUpdate.CustStatusFlag); 
 
                         using (con)
                         {
@@ -469,7 +456,7 @@ namespace SGShoesFinal.App_Code
                         } 
         }
 
-        void CustomerDelete()
+        void CustomerDelete(Customer custToDelete)
         {
             SqlConnection con = new SqlConnection(_connectionString);
 
@@ -479,7 +466,7 @@ namespace SGShoesFinal.App_Code
             cmd.CommandText = "DELETE Customer WHERE Customer_Id=@CustId";
 
 
-            cmd.Parameters.AddWithValue("@CustId", Customer_Id);
+            cmd.Parameters.AddWithValue("@CustId", custToDelete.CustId );
 
 
             using (con)
