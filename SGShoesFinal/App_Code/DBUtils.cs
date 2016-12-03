@@ -424,7 +424,7 @@ namespace SGShoesFinal.App_Code
             }
             return colCustomer;
         }
-        void CustomerUpdate(Customer custToUpdate)
+        public void CustomerUpdate(Customer custToUpdate)
         {
             SqlConnection con = new SqlConnection(_connectionString);
 
@@ -456,7 +456,7 @@ namespace SGShoesFinal.App_Code
                         } 
         }
 
-        void CustomerDelete(Customer custToDelete)
+        public void CustomerDelete(Customer custToDelete)
         {
             SqlConnection con = new SqlConnection(_connectionString);
 
@@ -467,7 +467,6 @@ namespace SGShoesFinal.App_Code
 
 
             cmd.Parameters.AddWithValue("@CustId", custToDelete.CustId );
-
 
             using (con)
             {
@@ -541,10 +540,10 @@ namespace SGShoesFinal.App_Code
             }
             return colOrder;
         }
-        void OrderUpdate()
+        public void OrderUpdate(Order orderToUpdate)
         { }
 
-        void OrderDelete()
+        public void OrderDelete(Order orderToDelete)
         { }
 
         public void OrderInsert(Order newOrder)

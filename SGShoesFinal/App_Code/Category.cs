@@ -140,11 +140,11 @@ namespace SGShoesFinal.App_Code
                 throw new ArgumentException("Product Id must be greater than 0", "id");
 
             DBUtils dataAccessLayer = new DBUtils();
-            dataAccessLayer.CategoryDelete(id);
+            dataAccessLayer.CategoryDelete(objectToDelete);
         }
 
 
-        public static void updateCategory(Category productDetToUpdate)
+        public static void updateCategory(Category CategoryToUpdate)
         {
             if (CategoryToUpdate.CatId < 1)
                 throw new ArgumentException("Product Id must be greater than 0", "id");

@@ -242,7 +242,7 @@ namespace SGShoesFinal.App_Code
                 throw new ArgumentException("Product Id must be greater than 0", "id");
 
             DBUtils dataAccessLayer = new DBUtils();
-            dataAccessLayer.CustomerDelete(id);
+            dataAccessLayer.CustomerDelete(objectToDelete);
         }
 
 

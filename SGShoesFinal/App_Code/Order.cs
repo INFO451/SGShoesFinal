@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using SGShoesFinal.App_Code;
 
 namespace SGShoesFinal.App_Code
 {
@@ -12,7 +13,7 @@ namespace SGShoesFinal.App_Code
         private int _CustId = 0;
         private int _ProdId = 0;
         private int _Quantity = 0;
-        private DateTime _SaleDate = FIXTHIS;
+        private DateTime? _SaleDate = null;
         private string _OrderStatus = string.Empty;
 
 
@@ -48,7 +49,7 @@ namespace SGShoesFinal.App_Code
         /// Order Quantity
         /// </summary>
 
-        public DateTime SaleDate
+        public DateTime? SaleDate
         {
             get { return _SaleDate; }
             set { _SaleDate = value; }
@@ -174,7 +175,7 @@ namespace SGShoesFinal.App_Code
                 throw new ArgumentException("Product Id must be greater than 0", "id");
 
             DBUtils dataAccessLayer = new DBUtils();
-            dataAccessLayer.OrderDelete(OrderId);
+            dataAccessLayer.OrderDelete(objectToDelete);
         }
 
 
@@ -187,9 +188,6 @@ namespace SGShoesFinal.App_Code
             dataAccessLayer.OrderUpdate(OrderToUpdate);
         }
 
-
-    }
-}
 
     }
 }
