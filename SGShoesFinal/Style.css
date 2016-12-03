@@ -17,6 +17,9 @@
     .container {
         max-width: 730px;
     }
+    .logo{
+        margin: .5em 1em .25em 1.5em;
+    }
 }
 
 .container {
@@ -27,8 +30,7 @@
 
 .logo
 {
-    margin-top: 0px;
-    margin-bottom: 10px;
+    margin: .5em 1em .25em 1.5em;
     text-align:center !important;
 }
 
@@ -98,3 +100,10 @@ ul {
     margin: 4px 0 0 0;
 
 }
+
+.product_list
+{
+    display:inline-block;
+    margin: 2em 0 0 0;
+}
+

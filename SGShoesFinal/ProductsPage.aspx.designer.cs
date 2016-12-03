@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SGShoesFinal.Masters {
+namespace SGShoesFinal {
     
     
-    public partial class WebForm2 {
+    public partial class ProductsPage {
         
         /// <summary>
         /// ProductData control.

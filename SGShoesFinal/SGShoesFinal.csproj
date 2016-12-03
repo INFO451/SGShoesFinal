@@ -71,7 +71,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Images\adidas sneakers - Copy.jpg" />
-    <Content Include="Images\flats - Copy.jpg" />
+    <Content Include="Images\smflats.jpg" />
     <Content Include="Images\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Images\adidas sneakers.jpg" />
     <Content Include="Images\alyssatoffee.jpg" />
@@ -80,14 +80,14 @@
     <Content Include="Images\flats.jpg" />
     <Content Include="Images\grilled.png" />
     <Content Include="Images\grilled_%402X.png" />
-    <Content Include="Images\juliecombat - Copy.jpg" />
+    <Content Include="Images\smboot.jpg" />
     <Content Include="Images\juliecombat.jpg" />
     <Content Include="Images\light_honeycomb.png" />
     <Content Include="Images\light_honeycomb_%402X.png" />
     <Content Include="Images\logo.jpg" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\smAdidas.jpg" />
-    <Content Include="Images\stecy heels - Copy.jpg" />
+    <Content Include="Images\smheel.jpg" />
     <Content Include="Images\stecy heels.jpg" />
     <Content Include="Index.aspx" />
     <Content Include="ProductsPage.aspx" />
