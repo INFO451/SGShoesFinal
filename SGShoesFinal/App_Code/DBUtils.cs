@@ -486,10 +486,10 @@ namespace SGShoesFinal.App_Code
             }
             return colOrder;
         }
-        void OrderUpdate()
+        public void OrderUpdate()
         { }
 
-        void OrderDelete()
+        public void OrderDelete()
         { }
 
         public void OrderInsert(Order newOrder)
