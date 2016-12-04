@@ -8,7 +8,20 @@ using System.Web.UI.WebControls;
 namespace SGShoesFinal.Masters
 {
     public partial class WebForm3 : System.Web.UI.Page
-    { }
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            Username.Focus();
+        }
+        protected void Username_Authenticate(object sender, AuthenticateEventArgs e)
+        {
+            if (Username.Username == "Username" && Username.Password == "Password")
+            {
+                e.Authenticated = true;
+            }
+        }
+    }
+}
  /*   {
         protected void Page_Load(object sender, EventArgs e)
         {
