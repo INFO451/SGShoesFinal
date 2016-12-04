@@ -8,11 +8,13 @@ using System.Web.UI.WebControls;
 namespace SGShoesFinal.Masters
 {
     public partial class WebForm3 : System.Web.UI.Page
-    {
+    { }
+ /*   {
         protected void Page_Load(object sender, EventArgs e)
         {
             private TextBox txtUserName;
-        private TextBox txtPassword;
+            private TextBox txtPassword;
+    
 
         public string Username
         { get
@@ -64,6 +66,6 @@ namespace SGShoesFinal.Masters
             {
                 return HtmlTextWriterTag.Table;
             }
-        }
-        }
+        } 
+        }*/
     }

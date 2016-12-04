@@ -91,13 +91,13 @@
     <Content Include="Images\smheel.jpg" />
     <Content Include="Images\stecy heels.jpg" />
     <Content Include="Index.aspx" />
+    <Content Include="ShoppingCart.aspx" />
     <Content Include="ProductsPage.aspx" />
     <Content Include="LoginPage.aspx" />
     <Content Include="packages.config" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
-    <Content Include="LoggedInPages\LoggedIn.Master" />
     <Content Include="Masters\Main.Master" />
     <Content Include="Images\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Images\fonts\glyphicons-halflings-regular.woff" />
@@ -133,13 +133,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="LoggedInPages\LoggedIn.Master.cs">
-      <DependentUpon>LoggedIn.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="LoggedInPages\LoggedIn.Master.designer.cs">
-      <DependentUpon>LoggedIn.Master</DependentUpon>
-    </Compile>
     <Compile Include="Masters\Main.Master.cs">
       <DependentUpon>Main.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -153,6 +146,13 @@
     </Compile>
     <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShoppingCart.aspx.cs">
+      <DependentUpon>ShoppingCart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShoppingCart.aspx.designer.cs">
+      <DependentUpon>ShoppingCart.aspx</DependentUpon>
     </Compile>
     <Compile Include="ProductsPage.aspx.cs">
       <DependentUpon>ProductsPage.aspx</DependentUpon>
@@ -172,6 +172,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="LoggedInPages\" />
     <Folder Include="Models\" />
     <Folder Include="PagesAdmin\" />
   </ItemGroup>

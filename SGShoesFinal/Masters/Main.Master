@@ -15,7 +15,8 @@
     <div class="container">
         <div class ="Main">
             <div class ="top-right shopbag">
-            <img class="shopbag top-right" src="../Images/shopping-purse.png" atl="Shoping Bag" /></div>
+                <asp:ImageButton ID="ShopingCartButton" runat="server" ImageUrl="~/Images/shopping-purse.png"  PostBackUrl="ShoppingCart.aspx" />
+            </div>
         <h1 class="logo">S&G SHOES<img src="../Images/logo.jpg" alt="S&G Shoes" /></h1>
         <div class="navbar">
             <a class="menul" href="INDEX.aspx">HOME</a>

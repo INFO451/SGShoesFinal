@@ -19,7 +19,7 @@
     <asp:ObjectDataSource ID="ProductData" runat="server" DataObjectTypeName="SGShoesFinal.App_Code.Product" DeleteMethod="deleteProduct" InsertMethod="insertProduct" SelectMethod="getAllProducts" TypeName="SGShoesFinal.App_Code.Product" UpdateMethod="updateProduct"></asp:ObjectDataSource>
 <asp:DataList ID="DataList1" runat="server" DataSourceID="ProductData" RepeatColumns="3" CssClass="product_list" Font-Names="Tahoma,Arial,sans-serif" HorizontalAlign="Center">
     <ItemTemplate>
-        <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("ImageLocSmall") %>' BorderStyle="Solid" BorderWidth="1px" />
+        <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("ImageLocSmall") %>' BorderStyle="None" BorderWidth="1px" />
         <input id="Hidden1" type="hidden" />
         <input id="Hidden2" type="hidden" />
         <br />
