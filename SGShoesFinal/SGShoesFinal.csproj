@@ -94,6 +94,7 @@
     <Content Include="Index.aspx" />
     <Content Include="LoggedInPages\PagesAdmin\admin.css" />
     <Content Include="LoggedInPages\PagesAdmin\AdminControls.aspx" />
+    <Content Include="Myaccount.aspx" />
     <Content Include="ShoppingCart.aspx" />
     <Content Include="ProductsPage.aspx" />
     <Content Include="LoginPage.aspx" />
@@ -172,6 +173,13 @@
     </Compile>
     <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Myaccount.aspx.cs">
+      <DependentUpon>Myaccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Myaccount.aspx.designer.cs">
+      <DependentUpon>Myaccount.aspx</DependentUpon>
     </Compile>
     <Compile Include="ShoppingCart.aspx.cs">
       <DependentUpon>ShoppingCart.aspx</DependentUpon>
