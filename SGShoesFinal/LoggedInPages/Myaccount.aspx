@@ -11,7 +11,6 @@
         </h2>
         <h2>Account Information</h2>
         <h4>Login</h4>
-        <h4>Password</h4>
         <h4>First Name</h4>
         <h4>Last Name</h4>
         <h4>Phone Number</h4>
