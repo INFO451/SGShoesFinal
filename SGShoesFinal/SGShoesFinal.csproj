@@ -136,6 +136,7 @@
     <Content Include="App_Code\Product_Detail.cs" />
     <Content Include="App_Code\BusinessLogic.cs" />
     <Content Include="App_Code\DBUtils.cs" />
+    <Content Include="App_Code\Cart.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

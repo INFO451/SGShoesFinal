@@ -17,8 +17,12 @@
     <form id="form1" runat="server">
     <div class="container">
         <div class ="Main">
-        <h1 class="logo">S&G SHOES<img src="~/Images/logo.jpg" alt="S&G Shoes" /></h1>
- 
+        <h2 class="logo">S&G SHOES<img src="../../Images/logo.jpg" alt="S&G Shoes" /></h2>
+       <div class="navbar">
+           <span class="navbar_spacer">//</span>
+            <a class="menul" href="INDEX.aspx">Loggout</a>
+            <span class="navbar_spacer">//</span>               
+        </div>
             </div>
 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         

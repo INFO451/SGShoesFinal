@@ -16,7 +16,8 @@ namespace SGShoesFinal.LoggedInPages.PagesAdmin
 
         protected void AdminMenu_MenuItemClick(object sender, MenuEventArgs e)
         {
-
+            int index = Int32.Parse(e.Item.Value);
+            AdminMV.ActiveViewIndex = index;
         }
     }
 }
