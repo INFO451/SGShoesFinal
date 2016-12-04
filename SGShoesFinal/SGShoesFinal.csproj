@@ -92,6 +92,8 @@
     <Content Include="Images\smheel.jpg" />
     <Content Include="Images\stecy heels.jpg" />
     <Content Include="Index.aspx" />
+    <Content Include="LoggedInPages\PagesAdmin\admin.css" />
+    <Content Include="LoggedInPages\PagesAdmin\AdminControls.aspx" />
     <Content Include="ShoppingCart.aspx" />
     <Content Include="ProductsPage.aspx" />
     <Content Include="LoginPage.aspx" />
@@ -108,6 +110,8 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="LoggedInPages\NestedLoggedIn.master" />
+    <Content Include="LoggedInPages\PagesAdmin\Admin.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -133,6 +137,27 @@
     <Content Include="App_Code\DBUtils.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="LoggedInPages\NestedLoggedIn.master.cs">
+      <DependentUpon>NestedLoggedIn.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoggedInPages\NestedLoggedIn.master.designer.cs">
+      <DependentUpon>NestedLoggedIn.master</DependentUpon>
+    </Compile>
+    <Compile Include="LoggedInPages\PagesAdmin\Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoggedInPages\PagesAdmin\Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="LoggedInPages\PagesAdmin\AdminControls.aspx.cs">
+      <DependentUpon>AdminControls.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoggedInPages\PagesAdmin\AdminControls.aspx.designer.cs">
+      <DependentUpon>AdminControls.aspx</DependentUpon>
     </Compile>
     <Compile Include="Masters\Main.Master.cs">
       <DependentUpon>Main.Master</DependentUpon>
@@ -173,9 +198,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="LoggedInPages\" />
     <Folder Include="Models\" />
-    <Folder Include="PagesAdmin\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

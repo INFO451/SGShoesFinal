@@ -11,74 +11,20 @@ namespace SGShoesFinal.Masters
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Username.Focus();
+            Login1.Focus();
         }
         protected void Username_Authenticate(object sender, AuthenticateEventArgs e)
         {
-            if (Username.Username == "Username" && Username.Password == "Password")
+            if (Login1.UserName == "Admin" && Login1.Password == "Admin")
             {
                 e.Authenticated = true;
             }
         }
+
+        protected void LoginButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
- /*   {
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            private TextBox txtUserName;
-            private TextBox txtPassword;
-    
-
-        public string Username
-        { get
-            {
-                EnsureChildControls();
-                return txtUserName.Text;
-            }
-            set
-            {
-                EnsureChildControls();
-                txtUserName.Text = value;
-            }
-        }
-        public string Password
-        {
-            get
-            {
-                EnsureChildControls();
-                return txtPassword.Text;
-            }
-            set
-            {
-                EnsureChildControls();
-                txtPassword.Text = value;
-            }
-        }
-        protected override void CreateChildControls()
-        {
-            txtUserName = new TextBox();
-            txtUserName.ID = "txtUserName";
-            this.Controls.Add(txtUserName);
-
-            txtPassword = new TextBox();
-            txtPassword.ID = "txtPassword";
-            txtPassword.TextMode = TextBoxMode.Password;
-            this.Controls.Add(txtPassword);
-        }
-        protected override void RenderContents(HtmlTextWriter writer)
-        {
-            writer.RenderBeginTag(HtmlTextWriterTag.Tr);
-
-            writer.RenderEndTag();
-            writer.RenderBeginTag(HtmlTextWriterTag.Tr);
-            writer.RenderEndTag();
-        }
-        protected override HtmlTextWriterTag TagKey
-        {
-            get
-            {
-                return HtmlTextWriterTag.Table;
-            }
-        } 
-        }*/
-    }
+ 
