@@ -17,7 +17,7 @@
     <form id="form1" runat="server">
     <div class="container">
         <div class ="Main">
-        <h1 class="logo">S&G SHOES<img src="../Images/logo.jpg" alt="S&G Shoes" /></h1>
+        <h1 class="logo">S&G SHOES<img src="~/Images/logo.jpg" alt="S&G Shoes" /></h1>
  
             </div>
 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

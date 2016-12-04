@@ -13,21 +13,21 @@ namespace SGShoesFinal {
     public partial class Myaccount {
         
         /// <summary>
-        /// form1 control.
+        /// CustomerDataSource control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.ObjectDataSource CustomerDataSource;
         
         /// <summary>
-        /// ObjectDataSource1 control.
+        /// OrderDataSource control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
+        protected global::System.Web.UI.WebControls.SqlDataSource OrderDataSource;
     }
 }

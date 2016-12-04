@@ -46,16 +46,16 @@ namespace SGShoesFinal.LoggedInPages.PagesAdmin {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource CatSDS;
+        protected global::System.Web.UI.WebControls.ObjectDataSource CatSDS;
         
         /// <summary>
-        /// GridView1 control.
+        /// CatGrid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.GridView CatGrid;
         
         /// <summary>
         /// CustView control.
@@ -73,16 +73,16 @@ namespace SGShoesFinal.LoggedInPages.PagesAdmin {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource CustSDS;
+        protected global::System.Web.UI.WebControls.ObjectDataSource CustSDS;
         
         /// <summary>
-        /// GridView2 control.
+        /// CustGrid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView2;
+        protected global::System.Web.UI.WebControls.GridView CustGrid;
         
         /// <summary>
         /// OrderView control.
@@ -100,16 +100,16 @@ namespace SGShoesFinal.LoggedInPages.PagesAdmin {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource OrderSDS;
+        protected global::System.Web.UI.WebControls.ObjectDataSource OrderSDS;
         
         /// <summary>
-        /// GridView3 control.
+        /// OrderGrid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView3;
+        protected global::System.Web.UI.WebControls.GridView OrderGrid;
         
         /// <summary>
         /// ProdView control.
@@ -127,16 +127,16 @@ namespace SGShoesFinal.LoggedInPages.PagesAdmin {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource ProdSDS;
+        protected global::System.Web.UI.WebControls.ObjectDataSource ProdSDS;
         
         /// <summary>
-        /// GridView4 control.
+        /// ProdGrid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView4;
+        protected global::System.Web.UI.WebControls.GridView ProdGrid;
         
         /// <summary>
         /// ProdDetailView control.
@@ -154,15 +154,15 @@ namespace SGShoesFinal.LoggedInPages.PagesAdmin {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource ProdDetailSDS;
+        protected global::System.Web.UI.WebControls.ObjectDataSource ProdDetailSDS;
         
         /// <summary>
-        /// GridView5 control.
+        /// ProdDetailGrid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView5;
+        protected global::System.Web.UI.WebControls.GridView ProdDetailGrid;
     }
 }

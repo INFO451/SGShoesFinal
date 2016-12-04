@@ -1,16 +1,13 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Myaccount.aspx.cs" Inherits="SGShoesFinal.Myaccount" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true"  MasterPageFile="~/Masters/Main.Master" CodeBehind="Myaccount.aspx.cs" Inherits="SGShoesFinal.Myaccount" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>My Profile</title>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
+<asp:Content  ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h2>
-        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server"></asp:ObjectDataSource>
+        <asp:ObjectDataSource ID="CustomerDataSource" runat="server" DataObjectTypeName="SGShoesFinal.App_Code.Customer" DeleteMethod="deleteCustomer" InsertMethod="insertCustomer" SelectMethod="getAllCustomers" TypeName="SGShoesFinal.App_Code.Customer" UpdateMethod="updateCustomer"></asp:ObjectDataSource>
+        <asp:SqlDataSource ID="OrderDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:fall16_g2ConnectionString %>" SelectCommand="SELECT * FROM [Order] WHERE ([Customer_Id] = @Customer_Id)">
+            <SelectParameters>
+                <asp:ControlParameter ControlID="DetailsView1" Name="Customer_Id" PropertyName="SelectedValue" Type="Int32" />
+            </SelectParameters>
+        </asp:SqlDataSource>
         </h2>
         <h2>Account Information</h2>
         <h4>First Name</h4>
@@ -23,7 +20,4 @@
         <h4>Order ID</h4>
         <h4>Order Date</h4>
         <h4>Order Status</h4>
-    </div>
-    </form>
-</body>
-</html>
+    </asp:Content>
