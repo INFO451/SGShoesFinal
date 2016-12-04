@@ -120,7 +120,7 @@ namespace SGShoesFinal.App_Code
         /// <param name="dob">DBObject Date of Birth</param>
         /// <param name="active">Active Account</param>
         /// <param name="rate">Hourly Rate</param>
-        public Order(int CustId, int ProdId, int Quantity, DateTime SaleDate, string OrderStatus)
+        public Order(int CustId, int ProdId, int Quantity, DateTime? SaleDate, string OrderStatus)
             : this(0, CustId, ProdId, Quantity, SaleDate, OrderStatus) { }
 
         /// <summary>
@@ -141,7 +141,7 @@ namespace SGShoesFinal.App_Code
         /// <param name="dob">DBObject Date of Birth</param>
         /// <param name="active">Active Account</param>
         /// <param name="rate">Hourly Rate</param>
-        public Order(int id, int CustId, int ProdId, int Quantity, DateTime SaleDate, string OrderStatus)
+        public Order(int id, int CustId, int ProdId, int Quantity, DateTime? SaleDate, string OrderStatus)
         {
             _id = OrderId;
             _CustId = CustId;

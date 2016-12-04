@@ -534,7 +534,7 @@ namespace SGShoesFinal.App_Code
                         (int)reader["Customer_Id"],
                         (int)reader["Product_Id"],
                         (int)reader["Quantity"],
-                        (DateTime)reader["Sale_Date"],
+                        (DateTime?)reader["Sale_Date"],
                         (string)reader["Order_Status"]));
                 }
             }

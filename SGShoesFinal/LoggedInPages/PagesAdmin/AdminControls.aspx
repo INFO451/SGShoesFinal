@@ -21,6 +21,7 @@
     <div class="tabContents">
     <asp:MultiView ID="AdminMV" ActiveViewIndex="0" runat="server">
         <asp:View ID="CatView" runat="server">
+            <h2>Categories</h2>
             <asp:ObjectDataSource ID="CatSDS" runat="server" DataObjectTypeName="SGShoesFinal.App_Code.Category" DeleteMethod="deleteCategory" InsertMethod="insertCategory" SelectMethod="getAllCategories" TypeName="SGShoesFinal.App_Code.Category" UpdateMethod="updateCategory"></asp:ObjectDataSource>
             <asp:GridView ID="CatGrid" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataSourceID="CatSDS">
                 <Columns>
@@ -32,6 +33,7 @@
             </asp:GridView>
         </asp:View>
         <asp:View ID="CustView" runat="server">
+            <h2>Customers</h2>
             <asp:ObjectDataSource ID="CustSDS" runat="server" DataObjectTypeName="SGShoesFinal.App_Code.Customer" DeleteMethod="deleteCustomer" InsertMethod="insertCustomer" SelectMethod="getAllCustomers" TypeName="SGShoesFinal.App_Code.Customer" UpdateMethod="updateCustomer"></asp:ObjectDataSource>
             <asp:GridView ID="CustGrid" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataSourceID="CatSDS">
                 <Columns>
@@ -43,6 +45,7 @@
             </asp:GridView>
         </asp:View>
         <asp:View ID="OrderView" runat="server">
+            <h2>Orders</h2>
             <asp:ObjectDataSource ID="OrderSDS" runat="server" DataObjectTypeName="SGShoesFinal.App_Code.Order" DeleteMethod="deleteOrder" InsertMethod="insertOrder" SelectMethod="getAllOrders" TypeName="SGShoesFinal.App_Code.Order" UpdateMethod="updateOrder"></asp:ObjectDataSource>
             <asp:GridView ID="OrderGrid" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataSourceID="OrderSDS">
                 <Columns>
@@ -57,6 +60,7 @@
             </asp:GridView>
         </asp:View>
         <asp:View ID="ProdView" runat="server">
+            <h2>Products</h2>
             <asp:ObjectDataSource ID="ProdSDS" runat="server" DataObjectTypeName="SGShoesFinal.App_Code.Product" DeleteMethod="deleteProduct" InsertMethod="insertProduct" SelectMethod="getAllProducts" TypeName="SGShoesFinal.App_Code.Product" UpdateMethod="updateProduct"></asp:ObjectDataSource>
             <asp:GridView ID="ProdGrid" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataSourceID="ProdSDS">
                 <Columns>
@@ -76,6 +80,7 @@
             </asp:GridView>
         </asp:View>
         <asp:View ID="ProdDetailView" runat="server">
+            <h2>Product Details</h2>
             <asp:ObjectDataSource ID="ProdDetailSDS" runat="server" DataObjectTypeName="SGShoesFinal.App_Code.Product_Detail" DeleteMethod="deleteProductDet" InsertMethod="insertProductDet" SelectMethod="getAllProductDets" TypeName="SGShoesFinal.App_Code.Product_Detail" UpdateMethod="updateProductDet"></asp:ObjectDataSource>
             <asp:GridView ID="ProdDetailGrid" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataSourceID="ProdDetailSDS">
                 <Columns>
