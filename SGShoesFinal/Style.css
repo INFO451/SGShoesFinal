@@ -32,6 +32,13 @@
 {
     margin: .5em 1em .25em 1.5em;
     text-align:center !important;
+    font-family:Courier New, Courier, monospace;
+    font-size:4.8em;
+}
+
+.logo img
+{
+    padding-left: 1em;
 }
 
 .navbar
@@ -105,5 +112,10 @@ ul {
 {
     display:inline-block;
     margin: 2em 0 0 0;
+}
+
+.shopbag
+{
+    text-align:right;
 }
 

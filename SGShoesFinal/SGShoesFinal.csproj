@@ -71,6 +71,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Images\adidas sneakers - Copy.jpg" />
+    <Content Include="Images\shopping-purse.png" />
     <Content Include="Images\smflats.jpg" />
     <Content Include="Images\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Images\adidas sneakers.jpg" />
@@ -96,7 +97,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
-    <Content Include="Masters\LoggedIn.Master" />
+    <Content Include="LoggedInPages\LoggedIn.Master" />
     <Content Include="Masters\Main.Master" />
     <Content Include="Images\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Images\fonts\glyphicons-halflings-regular.woff" />
@@ -132,11 +133,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Masters\LoggedIn.Master.cs">
+    <Compile Include="LoggedInPages\LoggedIn.Master.cs">
       <DependentUpon>LoggedIn.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Masters\LoggedIn.Master.designer.cs">
+    <Compile Include="LoggedInPages\LoggedIn.Master.designer.cs">
       <DependentUpon>LoggedIn.Master</DependentUpon>
     </Compile>
     <Compile Include="Masters\Main.Master.cs">

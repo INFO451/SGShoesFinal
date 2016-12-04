@@ -14,7 +14,9 @@
     <form id="form1" runat="server">
     <div class="container">
         <div class ="Main">
-        <h1 class="logo"><img src="../Images/logo.png" alt="S&G Shoes" /></h1>
+            <div class ="top-right shopbag">
+            <img class="shopbag top-right" src="../Images/shopping-purse.png" atl="Shoping Bag" /></div>
+        <h1 class="logo">S&G SHOES<img src="../Images/logo.jpg" alt="S&G Shoes" /></h1>
         <div class="navbar">
             <a class="menul" href="INDEX.aspx">HOME</a>
             <span class="navbar_spacer">//</span>

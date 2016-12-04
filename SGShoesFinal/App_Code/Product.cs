@@ -201,8 +201,6 @@ namespace SGShoesFinal.App_Code
         }
 
 
-
-
         public static void updateProduct(Product employeeToUpdate)
         {
             if (employeeToUpdate.Id < 1)
@@ -210,6 +208,27 @@ namespace SGShoesFinal.App_Code
 
             DBUtils dataAccessLayer = new DBUtils();
             dataAccessLayer.ProductUpdate(employeeToUpdate);
+        }
+
+        public string[] getKeywords(Product prod)
+        {
+            return prod.Keywords.Split(',');
+        }
+
+        public static List<string> getKeywords (Product[] prod)
+        {
+            List<String> keywords = new List<String>();
+            int length = prod.Length;
+            for (int x = 0; x < length;x++)
+            {
+                string[] templist = prod[x].Keywords.Split(',');
+                int f = templist.Length;
+                for (int y = 0; y < f; y++)
+                {
+                    keywords.Add(templist[y]);
+                }
+            }
+            return keywords;
         }
 
 
