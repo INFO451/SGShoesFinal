@@ -5,7 +5,6 @@ using System.Web;
 using System.Data.SqlClient;
 using System.Web.Configuration;
 using SGShoesFinal.App_Code;
-using ShoppingCart.DAL;
 
 
 namespace SGShoesFinal.App_Code
@@ -61,14 +60,14 @@ namespace SGShoesFinal.App_Code
 
         public int getVisitorId()
         {
-            DataAccess dataAccess = new DataAccess();
+            DBUtils dataAccess = new DBUtils();
             return dataAccess.InsertVisitor();
 
         }
 
         public void updateLastVisit(int visitorId)
         {
-            DataAccess dataAccess = new DataAccess();
+            DBUtils dataAccess = new DBUtils();
             dataAccess.UpdateVisit(visitorId);
 
         }

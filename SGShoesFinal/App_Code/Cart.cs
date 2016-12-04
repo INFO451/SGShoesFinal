@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Web;
 
-namespace ShoppingCart
+namespace SGShoesFinal.App_Code
 {
     public class CartItem
     {

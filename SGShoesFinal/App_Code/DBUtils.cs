@@ -573,8 +573,88 @@ namespace SGShoesFinal.App_Code
         cmd.ExecuteNonQuery();
 
     }
-} 
+}
+        public int InsertOrder()
+        {
+            int visitorId;
 
+            // Create connection
+            SqlConnection con = new SqlConnection(_connectionString);
+
+            // Create command
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "INSERT VISITOR (LAST_VISIT) VALUES (@Date);SELECT CAST(scope_identity() AS int)";
+
+            // Add parameters
+            cmd.Parameters.AddWithValue("@Date", DateTime.Now);
+
+
+
+            // Execute command
+            using (con)
+            {
+                con.Open();
+                visitorId = (int)cmd.ExecuteScalar();
+
+            }
+
+            return visitorId;
+        }
+
+        public int InsertVisitor()
+        {
+            int visitorId;
+
+            // Create connection
+            SqlConnection con = new SqlConnection(_connectionString);
+
+            // Create command
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "INSERT VISITOR (LAST_VISIT) VALUES (@Date);SELECT CAST(scope_identity() AS int)";
+
+            // Add parameters
+            cmd.Parameters.AddWithValue("@Date", DateTime.Now);
+
+
+
+            // Execute command
+            using (con)
+            {
+                con.Open();
+                visitorId = (int)cmd.ExecuteScalar();
+
+            }
+
+            return visitorId;
+        }
+
+
+        public void UpdateVisit(int visitorId)
+        {
+            // Create connection
+            SqlConnection con = new SqlConnection(_connectionString);
+
+            // Create command
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "UPDATE VISITOR SET LAST_VISIT=@DATE WHERE VISITOR_ID=@Id";
+
+            // Add parameters
+            cmd.Parameters.AddWithValue("@Id", visitorId);
+            cmd.Parameters.AddWithValue("@Date", DateTime.Now);
+
+            // Execute command
+            using (con)
+            {
+                con.Open();
+                cmd.ExecuteNonQuery();
+
+            }
+
+
+        }
         static DBUtils()
         {
             _connectionString = WebConfigurationManager.ConnectionStrings["fall16_g2ConnectionString"].ConnectionString;
