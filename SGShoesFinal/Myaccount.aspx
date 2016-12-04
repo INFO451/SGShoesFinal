@@ -10,8 +10,12 @@
         </asp:SqlDataSource>
         </h2>
         <h2>Account Information</h2>
+        <h4>Login</h4>
+        <h4>Password</h4>
         <h4>First Name</h4>
         <h4>Last Name</h4>
+        <h4>Phone Number</h4>
+        <h4>Email</h4>
     <h2>Checkout Settings</h2>
         <h4>Shipping Address</h4>
         <h4>Billing Address</h4>
