@@ -123,3 +123,18 @@ ul {
 {
     box-shadow:none !important;
 }
+
+.loginText{
+    font-family: "futura-pt-n7","futura-pt",Tahoma,Geneva,Verdana,Arial,sans-serif;
+    font-style: normal;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.loginBox {
+   width: 100%;
+   border: 1px solid #999;
+   float: left;
+   height: 45px;
+}
