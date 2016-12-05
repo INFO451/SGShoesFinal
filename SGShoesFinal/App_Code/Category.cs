@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Web;
-using SGShoesFinal.App_Code;
 using SGShoesFinal.DAL;
 
 namespace SGShoesFinal

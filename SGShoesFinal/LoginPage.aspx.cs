@@ -11,10 +11,10 @@ namespace SGShoesFinal.Masters
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Login1.Focus();
         }
         protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
         {
+            Login Login1 = (Login)sender;
             if (Login1.UserName == "Admin" && Login1.Password == "Admin")
             {
                 e.Authenticated = true;
