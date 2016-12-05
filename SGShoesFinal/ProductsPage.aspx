@@ -7,13 +7,13 @@
             </div>
         <h2 class="logo">S&G SHOES<img src="../Images/logo.jpg" alt="S&G Shoes" /></h2>
         <div class="navbar">
-            <a class="menul" href="INDEX.aspx">HOME</a>
+            <a class="menul" href="~/INDEX.aspx">HOME</a>
             <span class="navbar_spacer">//</span>
-            <a class="menul" href="ProductsPage.aspx"> PRODUCTS</a>
+            <a class="menul" href="~/ProductsPage.aspx"> PRODUCTS</a>
             <span class="navbar_spacer">//</span>
-            <a class="menul" href="LoginPage.aspx">LOGIN</a>
+            <a class="menul" href="~/LoginPage.aspx">LOGIN</a>
             <span class="navbar_spacer">//</span>
-            <a class="menul" href="Page3.aspx">MY ACCOUNT</a>                
+            <a class="menul" href="~/LoggedInPages/Myaccount.aspx">MY ACCOUNT</a>                
         </div>
             </div> 
 
@@ -34,7 +34,7 @@
     </aside>
     <div class="col-md-9">
     <asp:ObjectDataSource ID="ProductData" runat="server" DataObjectTypeName="SGShoesFinal.App_Code.Product" DeleteMethod="deleteProduct" InsertMethod="insertProduct" SelectMethod="getAllProducts" TypeName="SGShoesFinal.App_Code.Product" UpdateMethod="updateProduct"></asp:ObjectDataSource>
-<asp:DataList ID="DataList1" runat="server" DataSourceID="ProductData" RepeatColumns="3" CssClass="product_list" Font-Names="Tahoma,Arial,sans-serif" HorizontalAlign="Center">
+<asp:DataList ID="dlProduct" runat="server" DataSourceID="ProductData" RepeatColumns="3" CssClass="product_list" Font-Names="Tahoma,Arial,sans-serif" HorizontalAlign="Center">
     <ItemTemplate>
         <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("ImageLocSmall") %>' BorderStyle="None" BorderWidth="1px" />
         <input id="Hidden1" type="hidden" />
