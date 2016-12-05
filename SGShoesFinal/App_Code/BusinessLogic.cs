@@ -5,6 +5,7 @@ using System.Web;
 using System.Data.SqlClient;
 using System.Web.Configuration;
 using SGShoesFinal.App_Code;
+using SGShoesFinal.DAL;
 
 
 namespace SGShoesFinal.App_Code
