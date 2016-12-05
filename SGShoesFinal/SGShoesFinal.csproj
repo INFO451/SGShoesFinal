@@ -172,14 +172,14 @@
     <Compile Include="WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
-    <Compile Include="App_Code\Category.cs" />
-    <Compile Include="App_Code\Customer.cs" />
-    <Compile Include="App_Code\Order.cs" />
-    <Compile Include="App_Code\Product.cs" />
-    <Compile Include="App_Code\Product_Detail.cs" />
-    <Compile Include="App_Code\BusinessLogic.cs" />
-    <Compile Include="App_Code\DBUtils.cs" />
-    <Compile Include="App_Code\Cart.cs" />
+    <Content Include="App_Code\Category.cs" />
+    <Content Include="App_Code\Customer.cs" />
+    <Content Include="App_Code\Order.cs" />
+    <Content Include="App_Code\Product.cs" />
+    <Content Include="App_Code\Product_Detail.cs" />
+    <Content Include="App_Code\BusinessLogic.cs" />
+    <Content Include="App_Code\DBUtils.cs" />
+    <Content Include="App_Code\Cart.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

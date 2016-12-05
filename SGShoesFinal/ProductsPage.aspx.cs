@@ -13,7 +13,7 @@ namespace SGShoesFinal
 
         protected void dlProduct_ItemCommand(object source, DataListCommandEventArgs e)
         {
-            BusinessLogic bl = new BusinessLogic();
+            /*BusinessLogic bl = new BusinessLogic();
             List<CartItem> myCart = bl.getCartContents();
 
             var productId = e.CommandArgument.ToString();
@@ -41,7 +41,7 @@ namespace SGShoesFinal
 
             ContentPlaceHolder ph = (ContentPlaceHolder)Master.Master.FindControl("MainContent");
             Label cartLabel = (Label)ph.FindControl("lblCart");
-            cartLabel.Text = "Shopping Cart (" + cartItems.ToString() + ")";
+            cartLabel.Text = "Shopping Cart (" + cartItems.ToString() + ")";*/
 
         }
 
