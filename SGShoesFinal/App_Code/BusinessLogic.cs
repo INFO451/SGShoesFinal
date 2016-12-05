@@ -70,8 +70,10 @@ namespace SGShoesFinal.App_Code
         {
             DBUtils dataAccess = new DBUtils();
             dataAccess.UpdateVisit(visitorId);
-
         }
+
+        public BusinessLogic()
+        { }
 
     }
 }
