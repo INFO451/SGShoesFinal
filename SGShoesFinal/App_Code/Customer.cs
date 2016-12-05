@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using SGShoesFinal.DAL;
 
-namespace SGShoesFinal.App_Code
+namespace SGShoesFinal
 {
     public class Customer
     {

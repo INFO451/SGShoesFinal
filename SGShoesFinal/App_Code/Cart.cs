@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Web;
 using SGShoesFinal.DAL;
 
-namespace SGShoesFinal.App_Code
+namespace SGShoesFinal
 {
     public class CartItem
     {

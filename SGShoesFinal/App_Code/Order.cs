@@ -5,7 +5,7 @@ using System.Web;
 using SGShoesFinal.App_Code;
 using SGShoesFinal.DAL;
 
-namespace SGShoesFinal.App_Code
+namespace SGShoesFinal
 {
     public class Order
     {

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Web.UI.WebControls;
-using SGShoesFinal.App_Code;
 
 namespace SGShoesFinal
 {
