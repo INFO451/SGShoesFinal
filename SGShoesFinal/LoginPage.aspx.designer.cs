@@ -10,7 +10,7 @@
 namespace SGShoesFinal.Masters {
     
     
-    public partial class WebForm3 {
+    public partial class LoginPage {
         
         /// <summary>
         /// Login1 control.

@@ -133,8 +133,6 @@ ul {
     margin-right: 0px;
 }
 .loginBox {
-   width: 100%;
    border: 1px solid #999;
    float: left;
-   height: 45px;
-}
+   }
