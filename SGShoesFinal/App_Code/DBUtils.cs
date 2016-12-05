@@ -193,33 +193,19 @@ namespace SGShoesFinal.App_Code
         /// Inserts an Product
         /// </summary>
         /// <param name="newProduct">Product</param>
-        public void ProductDetInsert(Product_Detail newProduct)
+        public void ProductDetInsert(Product_Detail newProdDet)
         {
             // Create connection
             SqlConnection con = new SqlConnection(_connectionString);
-            /*
             // Create command
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
-            cmd.CommandText = "INSERT Product (Description_Short,Manufacturer, Product_Name,Description_Long,Unit_Weight, Keywords, Unit_Price, Image_Location_Small, EMAIL, DOB, Image_Location_Large) VALUES (@FName,@Manufac,@LName,@Gender,@SAdress,@Keywords,@State,@Zip,@Email,@Dob,@HPhone,@Cell,@Active,@Rate)";
+            cmd.CommandText = "INSERT Product (Size,Quantity, Product_Id) VALUES (@Size,@Quant,@ProdId)";
 
             // Add parameters
-            cmd.Parameters.AddWithValue("@FName", newProduct.FName);
-            cmd.Parameters.AddWithValue("@Manufac", newProduct.Manufac);
-            cmd.Parameters.AddWithValue("@LName", newProduct.LName);
-            cmd.Parameters.AddWithValue("@SAdress", newProduct.SAdress);
-            cmd.Parameters.AddWithValue("@Gender", newProduct.Gender);
-
-            cmd.Parameters.AddWithValue("@Keywords", newProduct.Keywords);
-            cmd.Parameters.AddWithValue("@State", newProduct.State);
-            cmd.Parameters.AddWithValue("@Zip", newProduct.Zip);
-            cmd.Parameters.AddWithValue("@Email", newProduct.Email);
-            cmd.Parameters.AddWithValue("@Dob", newProduct.DOB);
-
-            cmd.Parameters.AddWithValue("@Hphone", newProduct.HPhone);
-            cmd.Parameters.AddWithValue("@Cell", newProduct.Cell);
-            cmd.Parameters.AddWithValue("@Active", newProduct.Active);
-            cmd.Parameters.AddWithValue("@Rate", newProduct.Rate);
+            cmd.Parameters.AddWithValue("@FName", newProdDet.Size);
+            cmd.Parameters.AddWithValue("@Manufac", newProdDet.Quantity);
+            cmd.Parameters.AddWithValue("@LName", newProdDet.ProdId);
 
             // Execute command
             using (con)
@@ -227,7 +213,7 @@ namespace SGShoesFinal.App_Code
                 con.Open();
                 cmd.ExecuteNonQuery();
 
-            } */
+            } 
         }
 
         /// <summary>
@@ -239,37 +225,22 @@ namespace SGShoesFinal.App_Code
 
             SqlConnection con = new SqlConnection(_connectionString);
 
-            /*
                         SqlCommand cmd = new SqlCommand();
                         cmd.Connection = con;
-                        cmd.CommandText = "UPDATE Product SET Description_Short=@FName,Product_Name=@LName,Manufacturer=@Manufac,Description_Long=@Gender,Unit_Weight=@SAdress,Keywords=@Keywords,Unit_Price=@State,Image_Location_Small=@Zip,EMAIL=@Email,DOB=@DOB,Image_Location_Large=@Hphone WHERE Product_Id=@Id";
+                        cmd.CommandText = "UPDATE Product SET Size=@Size,Quantity=@Quant,Product_Id=@ProdId WHERE Product_Detail_Id=@Id";
 
-                        cmd.Parameters.AddWithValue("@LName", ProductDetToUpdate.LName);
-                        cmd.Parameters.AddWithValue("@SDescrip", ProductDetToUpdate.FName);
-                        cmd.Parameters.AddWithValue("@Manufac", ProductDetToUpdate.Manufac);
-                        cmd.Parameters.AddWithValue("@SAdress", ProductDetToUpdate.SAdress);
-                        cmd.Parameters.AddWithValue("@Gender", ProductDetToUpdate.Gender);
+                        cmd.Parameters.AddWithValue("@LName", prodDetToUpdate.Size);
+                        cmd.Parameters.AddWithValue("@SDescrip", prodDetToUpdate.Quantity);
+                        cmd.Parameters.AddWithValue("@Manufac", prodDetToUpdate.ProdId);
 
-                        cmd.Parameters.AddWithValue("@State", ProductDetToUpdate.State);
-                        cmd.Parameters.AddWithValue("@Keywords", productDetToUpdate.Keywords);
-                        cmd.Parameters.AddWithValue("@Zip", productDetToUpdate.Zip);
-                        cmd.Parameters.AddWithValue("@Email", productDetToUpdate.Email);
-                        cmd.Parameters.AddWithValue("@Dob", productDetToUpdate.DOB);
-
-                        cmd.Parameters.AddWithValue("@HPhone", productDetToUpdate.HPhone);
-                        cmd.Parameters.AddWithValue("@Cell", productDetToUpdate.Cell);
-                        cmd.Parameters.AddWithValue("@Active", productDetToUpdate.Active);
-                        cmd.Parameters.AddWithValue("@Rate", productDetToUpdate.Rate); 
-
-
-                        cmd.Parameters.AddWithValue("@Id", productDetToUpdate.Id);
+                        cmd.Parameters.AddWithValue("@Id", prodDetToUpdate.Id);
 
                         using (con)
                         {
                             con.Open();
                             cmd.ExecuteNonQuery();
 
-                        } */
+                        } 
         }
 
 
@@ -520,7 +491,7 @@ namespace SGShoesFinal.App_Code
 
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
-            cmd.CommandText = "SELECT Order_Id, Customer_Id, Product_Id, Quantity, Sale_Date, Order_Status FROM Order";
+            cmd.CommandText = "SELECT Order_Id, Customer_Id, Product_Id, Quantity, Sale_Date, Order_Status FROM `Order`";
 
             // Execute command
             using (con)
@@ -541,10 +512,40 @@ namespace SGShoesFinal.App_Code
             return colOrder;
         }
         public void OrderUpdate(Order orderToUpdate)
-        { }
+        {
+            SqlConnection con = new SqlConnection(_connectionString);
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "UPDATE `Order` SET Custormer_Id=@CustId,Product_Id=@ProdId,Quantity=@Quant,Sale_Date=@SDate,Order_Status=@Status WHERE Order_Id=@Id";
+
+            cmd.Parameters.AddWithValue("@CustId", orderToUpdate.CustId);
+            cmd.Parameters.AddWithValue("@ProdId", orderToUpdate.ProdId);
+            cmd.Parameters.AddWithValue("@Quant", orderToUpdate.Quantity);
+            cmd.Parameters.AddWithValue("@SDate", orderToUpdate.SaleDate);
+            cmd.Parameters.AddWithValue("@Status", orderToUpdate.OrderStatus);
+
+            cmd.Parameters.AddWithValue("@Id", orderToUpdate.OrderId);
+
+                        using (con)
+                        {
+                            con.Open();
+                            cmd.ExecuteNonQuery();
+
+                        } 
+        }
 
         public void OrderDelete(Order orderToDelete)
-        { }
+        {
+            SqlConnection con = new SqlConnection(_connectionString);
+
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "DELETE `Order` WHERE Product_Detail_Id=@Id";
+
+
+            cmd.Parameters.AddWithValue("@Id", orderToDelete.OrderId);
+        }
 
         public void OrderInsert(Order newOrder)
         {
@@ -554,16 +555,16 @@ namespace SGShoesFinal.App_Code
             // Create command
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
-            cmd.CommandText = "INSERT Order(Order_Id, Customer_Id, Product_Id, Quantity, Sale_Date, Order_Status) VALUES (@OrderId,@CustId,@ProdId,@Quantity,@SaleDate,@OrderStatus)";
+            cmd.CommandText = "INSERT `Order`(Order_Id, Customer_Id, Product_Id, Quantity, Sale_Date, Order_Status) VALUES (@OrderId,@CustId,@ProdId,@Quantity,@SaleDate,@OrderStatus)";
 
-    // Add parameters
-    cmd.Parameters.AddWithValue("@OrderId", newOrder.OrderId);
-    cmd.Parameters.AddWithValue("@CustId", newOrder.CustId);
-    cmd.Parameters.AddWithValue("@ProdId", newOrder.ProdId);
-    cmd.Parameters.AddWithValue("@Quantity", newOrder.Quantity);
-    cmd.Parameters.AddWithValue("@SaleDate", newOrder.SaleDate);
+            // Add parameters
+            cmd.Parameters.AddWithValue("@OrderId", newOrder.OrderId);
+            cmd.Parameters.AddWithValue("@CustId", newOrder.CustId);
+            cmd.Parameters.AddWithValue("@ProdId", newOrder.ProdId);
+            cmd.Parameters.AddWithValue("@Quantity", newOrder.Quantity);
+            cmd.Parameters.AddWithValue("@SaleDate", newOrder.SaleDate);
 
-    cmd.Parameters.AddWithValue("@OrderStatus", newOrder.OrderStatus);
+            cmd.Parameters.AddWithValue("@OrderStatus", newOrder.OrderStatus);
  
 
     // Execute command

@@ -1,5 +1,22 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ProductsPage.aspx.cs" MasterPageFile="~/Masters/Main.Master" Inherits="SGShoesFinal.ProductsPage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ProductsPage.aspx.cs" MasterPageFile="~/Masters/ProductMaster.Master" Inherits="SGShoesFinal.ProductsPage" %>
 <asp:Content ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="container">
+        <div class ="Main">
+            <div class ="top-right shopbag">
+                <asp:ImageButton ID="ShopingCartButton" runat="server" ImageUrl="~/Images/shopping-purse.png"  PostBackUrl="~/ShoppingCart.aspx" />
+            </div>
+        <h2 class="logo">S&G SHOES<img src="../Images/logo.jpg" alt="S&G Shoes" /></h2>
+        <div class="navbar">
+            <a class="menul" href="INDEX.aspx">HOME</a>
+            <span class="navbar_spacer">//</span>
+            <a class="menul" href="ProductsPage.aspx"> PRODUCTS</a>
+            <span class="navbar_spacer">//</span>
+            <a class="menul" href="LoginPage.aspx">LOGIN</a>
+            <span class="navbar_spacer">//</span>
+            <a class="menul" href="Page3.aspx">MY ACCOUNT</a>                
+        </div>
+            </div> 
+
     <aside class="col-md-3">
         <h2 class="refine">REFINE BY</h2>
         <div class="panel">
@@ -56,5 +73,6 @@
     </ItemTemplate>
 </asp:DataList>
 </div>
+        </div>
 
 </asp:Content>

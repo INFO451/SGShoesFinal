@@ -29,13 +29,10 @@
             <span class="navbar_spacer">//</span>
             <a class="menul" href="Page3.aspx">MY ACCOUNT</a>                
         </div>
-            </div>
-        <div class="">   
+            </div> 
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:fall16_g2ConnectionString %>" SelectCommand="SELECT * FROM [Category]"></asp:ObjectDataSource>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:fall16_g2ConnectionString %>" SelectCommand="SELECT * FROM [Category]"></asp:SqlDataSource>
         </asp:ContentPlaceHolder>
-    
-        </div>
     </div>
     </form>
 </body>

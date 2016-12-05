@@ -112,7 +112,7 @@ namespace SGShoesFinal.App_Code
         /// <param name="rate">Hourly Rate</param>
         public Category(int Catid, string CatName, string CatDescription)
         {
-            _id = CatId;
+            _id = Catid;
             _name = CatName;
             _description = CatDescription;
         }

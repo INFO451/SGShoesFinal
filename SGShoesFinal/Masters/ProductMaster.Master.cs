@@ -7,11 +7,8 @@ using System.Web.UI.WebControls;
 
 namespace SGShoesFinal.Masters
 {
-    public partial class ShoppingCart : System.Web.UI.Page
+    public partial class ProductMaster : System.Web.UI.MasterPage
     {
-        void Page_PreRender()
-        {
-        }
         protected void Page_Load(object sender, EventArgs e)
         {
 

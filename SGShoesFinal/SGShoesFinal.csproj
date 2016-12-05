@@ -119,6 +119,8 @@
     <Content Include="LoggedInPages\PagesAdmin\admin.css" />
     <Content Include="LoggedInPages\PagesAdmin\AdminControls.aspx" />
     <Content Include="LoggedInPages\Myaccount.aspx" />
+    <Content Include="WebForm1.aspx" />
+    <Content Include="Masters\ProductMaster.Master" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
@@ -156,6 +158,20 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Masters\ProductMaster.Master.cs">
+      <DependentUpon>ProductMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masters\ProductMaster.Master.designer.cs">
+      <DependentUpon>ProductMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
     <Content Include="App_Code\Category.cs" />
     <Content Include="App_Code\Customer.cs" />
     <Content Include="App_Code\Order.cs" />
