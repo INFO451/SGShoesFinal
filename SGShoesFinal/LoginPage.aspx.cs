@@ -13,7 +13,7 @@ namespace SGShoesFinal.Masters
         {
             Login1.Focus();
         }
-        protected void Username_Authenticate(object sender, AuthenticateEventArgs e)
+        protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
         {
             if (Login1.UserName == "Admin" && Login1.Password == "Admin")
             {
