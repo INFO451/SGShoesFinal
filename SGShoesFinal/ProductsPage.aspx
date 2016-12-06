@@ -7,13 +7,13 @@
             </div>
         <h2 class="logo">S&G SHOES<img src="../Images/logo.jpg" alt="S&G Shoes" /></h2>
         <div class="navbar">
-            <a class="menul" href="~/INDEX.aspx">HOME</a>
+            <a class="menul" href="INDEX.aspx">HOME</a>
             <span class="navbar_spacer">//</span>
-            <a class="menul" href="~/ProductsPage.aspx"> PRODUCTS</a>
+            <a class="menul" href="ProductsPage.aspx"> PRODUCTS</a>
             <span class="navbar_spacer">//</span>
-            <a class="menul" href="~/LoginPage.aspx">LOGIN</a>
+            <a class="menul" href="LoginPage.aspx">LOGIN</a>
             <span class="navbar_spacer">//</span>
-            <a class="menul" href="~/LoggedInPages/Myaccount.aspx">MY ACCOUNT</a>                
+            <a class="menul" href="LoggedInPages/Myaccount.aspx">MY ACCOUNT</a>                
         </div>
             </div> 
 
